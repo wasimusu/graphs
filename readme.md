@@ -45,3 +45,4 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Find dependency between files.
 * What is the degree of distance between two people?
 * How many connected components are there in the graph?
+* Is there circular dependency in the graph? Or are there loops in the graph?
