@@ -8,7 +8,7 @@ private:
 public:
     adjacencyList() = default;
 
-    bool add_edge(int start, int end) override {
+    bool add_edge(int start, int end, int weight = 0) override {
         if (find(adjList[start].begin(), adjList[start].end(), end) == adjList[start].end())
             return false;
 

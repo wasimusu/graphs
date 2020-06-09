@@ -7,13 +7,17 @@ using namespace std;
 int main() {
 
     graph *graph1 = new edgeList;
-    graph1->add_edge(1, 0);
-    graph1->add_edge(2, 0);
-    graph1->add_edge(3, 1);
-    graph1->add_edge(3, 2);
+
+    bool a = graph1->add_edge({1, 0});
+    bool b = graph1->add_edge({2, 0});
+    bool c = graph1->add_edge({3, 1});
+    bool d = graph1->add_edge({3, 2});
+    cout << a << b << c << d << endl;
+    graph1->print_edges();
 
     vector<int> result;
     topological_sort(4, graph1, result);
+    cout << result.size() << endl;
     for (const int node: result) cout << node << "\t";
     cout << endl;
 

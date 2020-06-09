@@ -16,7 +16,7 @@ public:
         }
     }
 
-    bool add_edge(int start, int end) override {
+    bool add_edge(int start, int end, int weight = 0) override {
         if (start < 0 || end < 0 || start >= num_nodes || end >= num_nodes || adjMatrix[start][end] == 1) return false;
 
         adjMatrix[start][end] = 1;
