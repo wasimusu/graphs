@@ -7,10 +7,10 @@
  * other nodes in the graph.
  * Assumes the nodes are enumerated in 0 base.
  * **/
-int dijkstra_shortest_distance(graph *graph, int source_node, int target_node) {
+int dijkstra_shortest_distance(graph &graph, int source_node, int target_node) {
 
-    auto adjacent = graph->get_adjacentMatrix();
-    int n = graph->get_num_nodes();
+    auto adjacent = graph.get_adjacentMatrix();
+    int n = graph.get_num_nodes();
     int distances[n];
     std::fill(distances, distances + n + 1, std::numeric_limits<int>::max());
     distances[source_node] = 0;
@@ -33,20 +33,20 @@ int dijkstra_shortest_distance(graph *graph, int source_node, int target_node) {
         visited[node] = true;
 
         auto adj_list = adjacent[node];
-        std::cout << node << "\t";
+//        std::cout << node << "\t";
         for (int child = 0; child < n; child++) {
             int weight = adj_list[child];
-            std::cout << child << "\t";
+//            std::cout << child << "\t";
             if (weight == 0) continue;
             if (visited[child]) continue;
             distances[child] = std::min(distances[child], adjacent[node][child] + cost);
             pq.push_back({child, distances[child]});
             std::push_heap(pq.begin(), pq.end(), compare_min);
         }
-        std::cout << "\n";
+//        std::cout << "\n";
 
-        for (int i = 0; i < n; i++) std::cout << distances[i] << " ";
-        std::cout << "\n";
+//        for (int i = 0; i < n; i++) std::cout << distances[i] << " ";
+//        std::cout << "\n";
     }
 
     return distances[target_node];
@@ -55,10 +55,39 @@ int dijkstra_shortest_distance(graph *graph, int source_node, int target_node) {
 /*
  * @brief: Computes all pair shortest path using floyd's all path shortest path algorithm
  * reference: https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
- *
  * **/
-void all_pair_shortest_path() {
+int **all_pair_shortest_path(graph &graph) {
+    // adjacent_matrix can be used as the distance matrix
+    auto distances = graph.get_adjacentMatrix();
+    int n = graph.get_num_nodes();
 
+    // Change the adjancent matrix into distance matrix. Lack of connection means infinite distance.
+//    std::replace(distances, distances + n * n, 0, std::numeric_limits<int>::max());
+    for (int r = 0; r < n; r++) {
+        for (int c = 0; c < n; c++) {
+            if (r != c) distances[r][c] = (distances[r][c] == 0 ? std::numeric_limits<int>::max() : distances[r][c]);
+        }
+    }
+
+    // rc is the intermediate link. distance(r, c) = min(distance(r, rc) + distance(rc, c), distance(r, c))
+    for (int rc = 0; rc < n; rc++) {
+        for (int r = 0; r < n; r++) {
+            if (rc == r) continue;
+            for (int c = 0; c < n; c++) {
+                if (rc == c || r == c) continue;
+                distances[r][c] = std::min(distances[r][rc] + distances[rc][c], distances[r][c]);
+            }
+        }
+
+//        for (int r = 0; r < n; r++) {
+//            for (int c = 0; c < n; c++)
+//                std::cout << distances[r][c] << "\t\t";
+//            std::cout << '\n';
+//        }
+//        std::cout << "\n";
+    }
+
+    return distances;
 }
 
 

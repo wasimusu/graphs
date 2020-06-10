@@ -11,7 +11,7 @@ add_executable(exe
 
 add_executable(top_demo sample/topological_sort_demo.cpp)
 add_executable(mst_demo sample/mst_demo.cpp)
-add_executable(dijkstra_demo sample/dijkstra_demo.cpp)
+add_executable(dijkstra_demo sample/distance_demo.cpp)
 
 #add_subdirectory(test/googletest)
 #include_directories(test/googletest/googletest/include)

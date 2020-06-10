@@ -30,11 +30,15 @@ int main() {
     auto n = graph1->get_num_nodes();
     cout << n << endl;
 
-    graph1->print_edges();
-    auto adjacent = graph1->get_adjacentMatrix();
-
-    int result = dijkstra_shortest_distance(graph1, 0, 3);
+    int result = dijkstra_shortest_distance(*graph1, 0, 3);
     cout << result << endl;
+
+    auto dd = all_pair_shortest_path(*graph1);
+    n = graph1->get_num_nodes();
+    for(int r = 0; r < n; r++){
+        for(int c = 0; c < n; c++)
+            std::cout << dd[r][c] << " "; std::cout << '\n';
+    }
 
     return 0;
 }
