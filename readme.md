@@ -24,11 +24,11 @@ make
 * Three different representation of graph - adjacency matrix, adjacency list, edge list
 The value of a graph library lies in making it easy to construct and analyze graphs. 
 * Traversals (BFS, DFS)
+* Topological Sort
 * Print graphs for easy debugging. Multiple formats for printing graphs
 * Prim's Minimum Spanning Tree
 * Kruskals' Minimum Spanning Tree
 * Dijsktra's Shortest Path Algorithm
-* Topological Sort
 * Connected Components
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Floyd Warshall All Pairs Shortest Path Algorithm

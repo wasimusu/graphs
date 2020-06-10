@@ -16,7 +16,7 @@ int main() {
     bool f = graph1->add_edge({3, 5, 7});
     cout << a << b << c << d << e << f << endl;
 
-    auto n = dynamic_cast<edgeList*>(graph1)->get_num_nodes();
+    auto n = graph1->get_num_nodes();
     cout << n << endl;
 
 //    graph1->print_edges();

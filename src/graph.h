@@ -40,6 +40,10 @@ public:
         return indegree;
     };
 
+    virtual int get_num_nodes() const {
+        return 0;
+    }
+
     virtual void print_edges() {}
 };
 
