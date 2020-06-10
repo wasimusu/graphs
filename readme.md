@@ -20,7 +20,7 @@ cmake ..
 make
 ```
 
-### Algorithms (To be published by June 7, 2020)
+### Algorithms (To be published by June 14, 2020)
 * Three different representation of graph - adjacency matrix, adjacency list, edge list
 The value of a graph library lies in making it easy to construct and analyze graphs. 
 * Traversals (BFS, DFS)
@@ -29,6 +29,8 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Prim's Minimum Spanning Tree
 * Kruskals' Minimum Spanning Tree
 * Dijsktra's Shortest Path Algorithm
+
+#### To be published by June 14, 2014
 * Connected Components
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Floyd Warshall All Pairs Shortest Path Algorithm
