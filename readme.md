@@ -34,11 +34,11 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Prim's Minimum Spanning Tree
 * Kruskals' Minimum Spanning Tree
 * Dijsktra's Shortest Path Algorithm
+* Floyd Warshall All Pairs Shortest Path Algorithm
 
 #### To be published by June 14, 2014
 * Connected Components
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
-* Floyd Warshall All Pairs Shortest Path Algorithm
 * Tarjan's Strongly Connected Components
 * Bellman Ford Algorithm
 * Is the graph bipartite?

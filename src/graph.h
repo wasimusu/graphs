@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include <queue>
+#include <ostream>
 
 class graph {
 protected:
@@ -45,6 +46,9 @@ public:
     }
 
     virtual void print_edges() {}
+
+
+
 };
 
 #endif

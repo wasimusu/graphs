@@ -27,7 +27,6 @@ public:
 
         if (edge.size() == 2) edge.push_back(0);
 
-//        _edges.insert({edge[0], edge[1]});
         nodes.insert(edge[0]);
         nodes.insert(edge[1]);
         edges.push_back(std::move(edge));
@@ -116,6 +115,19 @@ public:
         }
     }
 
+    friend std::ostream &operator<<(std::ostream &os, const std::vector<int> &array) {
+        for (const int num: array) {
+            os << num << '\t';
+        }
+        return os;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const std::vector<std::vector<int>> &edges) {
+        for (const auto &edge: edges) {
+            os << edge[0] << ", " << edge[1] << ", " << edge[2] << '\n';
+        }
+        return os;
+    }
 
     ~edgeList() = default;
 };
