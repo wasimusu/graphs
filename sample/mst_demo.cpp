@@ -14,15 +14,13 @@ int main() {
     bool d = graph1->add_edge({5, 2, 2});
     bool e = graph1->add_edge({2, 3, 5});
     bool f = graph1->add_edge({3, 5, 7});
-    cout << a << b << c << d << e << f << endl;
-
-    auto n = graph1->get_num_nodes();
-    cout << n << endl;
-
-//    graph1->print_edges();
+    cout << "Edges inserted: \t\t\t" << a << b << c << d << e << f << endl;
 
     int result = mst_prim(graph1);
-    cout << result << endl;
+    cout << "Prim's spanning cost: \t\t"<< result << endl;
+
+    result = mst_kruskal(graph1);
+    cout << "Kruskal's spanning cost: \t"<< result << endl;
 
     return 0;
 }
