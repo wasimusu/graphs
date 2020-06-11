@@ -41,7 +41,6 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Connected Components
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Tarjan's Strongly Connected Components
-* Bellman Ford Algorithm
 * Is the graph bipartite?
 * Serialization/deserialization
 
