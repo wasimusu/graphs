@@ -1,0 +1,6 @@
+language: c++
+# we don't have any dependency to install
+#install: ignore
+compiler:
+  - clang
+  - gcc
