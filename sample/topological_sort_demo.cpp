@@ -38,6 +38,7 @@ void random_graph() {
     cout << endl;
 
     equal(reference_result.begin(), reference_result.end(), result.begin(), result.end());
+    delete graph1;
 }
 
 int main() {

@@ -6,7 +6,7 @@ using namespace std;
 
 
 void linear_graph() {
-    edgeList edgeList;
+    edgeList edgeList(false);
     int num_nodes = 10;
     for (int i = 0; i < num_nodes - 1; i++) {
         edgeList.add_edge({i, i + 1, 1});
@@ -22,7 +22,7 @@ void linear_graph() {
 
 
 void all_pairs_graph() {
-    edgeList edgeList;
+    edgeList edgeList(false);
     int num_nodes = 10;
     for (int i = 0; i < num_nodes; i++) {
         for (int j = 0; j < num_nodes; j++) {

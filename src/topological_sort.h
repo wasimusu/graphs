@@ -4,6 +4,9 @@
 
 #include <algorithm>
 
+/**
+ * If the nodes are not enumerated in 0 base, then there is segfault and allocated memory won't be released
+ * */
 void topological_sort(int num_nodes, graph *graph, std::vector<int> &result) {
 
     auto adjacent = graph->get_adjacentMatrix();
@@ -33,7 +36,12 @@ void topological_sort(int num_nodes, graph *graph, std::vector<int> &result) {
     }
 
     std::reverse(result.begin(), result.end());
-//    delete[] indegree;
+
+    for (int i = 0; i < num_nodes; i++) {
+        delete[] adjacent[i];
+    }
+    delete[] adjacent;
+    delete[] indegree;
 }
 
 
