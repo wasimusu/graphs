@@ -1,0 +1,7 @@
+*.*
+
+!*.md
+!*.cpp
+!*.h
+!LICENSE
+!CMakeLists.txt
