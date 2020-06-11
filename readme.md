@@ -28,13 +28,14 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * edgeList
 
 ### Algorithms
+* Print graphs for easy debugging. Multiple formats for printing graphs
 * Traversals (BFS, DFS, Level Order Traversal)
 * Topological Sort
-* Print graphs for easy debugging. Multiple formats for printing graphs
 * Prim's Minimum Spanning Tree
 * Kruskals' Minimum Spanning Tree
-* Dijsktra's Shortest Path Algorithm
+* Dijsktra's Shortest Path Algorithm (May not work for negative edges)
 * Floyd Warshall All Pairs Shortest Path Algorithm
+* Bellman Ford Shortest Path Algorithm (Works for negative edges)
 
 #### To be published by June 14, 2014
 * Connected Components
@@ -45,6 +46,7 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Serialization/deserialization
 
 ### Upcoming features/development
+* CI/CD
 * Benchmarks
 
 ### Questions that can be solved by graphs
@@ -56,4 +58,4 @@ Just find the shortest distance between two people (the edges should have unit w
 
 ### Goals
 * Double the speed of the whole library.
-* Reduce memory consumption
+* Reduce memory consumption and memory leaks

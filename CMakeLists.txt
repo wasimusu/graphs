@@ -15,7 +15,8 @@ add_executable(exe
 # Sample codes
 add_executable(top_demo sample/topological_sort_demo.cpp)
 add_executable(mst_demo sample/mst_demo.cpp)
-add_executable(dijkstra_demo sample/distance_demo.cpp)
+add_executable(dijkstra_demo sample/dijkstra_demo.cpp)
+add_executable(bellman_ford_demo sample/bellman_ford_demo.cpp)
 
 
 # All tests

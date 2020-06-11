@@ -1,3 +1,7 @@
+/**
+ * @brief Implements algorithms to compute minimum spanning tree for graphs
+ * */
+
 #pragma once
 #ifndef GRAPHS_MST_H
 #define GRAPHS_MST_H

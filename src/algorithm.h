@@ -7,6 +7,8 @@
 #include "topological_sort.h"
 #include "traverse.h"
 #include "distance.h"
+#include "connectivity.h"
+
 #include <iostream>
 #include <algorithm>
 #include <numeric>
