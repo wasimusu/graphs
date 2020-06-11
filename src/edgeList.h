@@ -15,7 +15,7 @@ private:
     bool directed;
 
 public:
-    explicit edgeList(const bool directed = false) : directed(directed) {}
+    explicit edgeList(const bool directed = true) : directed(directed) {}
 
     /*
      * @brief: add edge in the graph. Does nothing if the edge already exists
@@ -40,7 +40,10 @@ public:
             return false;
         }
 
-        if (edge.size() == 2) edge.push_back(0);
+        if (edge.size() == 2) {
+            if (directed) edge.push_back(1);
+            else edge.push_back(0);
+        }
 
         if (!directed) {
             auto other_edge{edge};
@@ -73,6 +76,7 @@ public:
 
         num_nodes = get_num_nodes();
         adjMatrix = new int *[num_nodes];
+//        std::fill(*adjMatrix, *adjMatrix + num_nodes * num_nodes, 0);
         for (int i = 0; i < num_nodes; i++) {
             adjMatrix[i] = new int[num_nodes];
             std::fill(adjMatrix[i], adjMatrix[i] + num_nodes, 0);

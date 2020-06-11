@@ -33,6 +33,7 @@ void topological_sort(int num_nodes, graph *graph, std::vector<int> &result) {
     }
 
     std::reverse(result.begin(), result.end());
+//    delete[] indegree;
 }
 
 

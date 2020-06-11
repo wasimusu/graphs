@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GRAPHS_ALGORITHM_H
 #define GRAPHS_ALGORITHM_H
 

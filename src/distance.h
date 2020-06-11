@@ -44,6 +44,11 @@ int dijkstra_shortest_distance(graph &graph, int source_node, int target_node) {
         }
     }
 
+//    for (int i = 0; i < n; i++) {
+//        delete[] adjacent[i];
+//    }
+//    delete[] adjacent;
+
     return distances[target_node];
 }
 
