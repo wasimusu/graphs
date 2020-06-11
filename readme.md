@@ -27,7 +27,7 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * adjacencyMatrix
 * edgeList
 
-### Algorithms (To be published by June 14, 2020)
+### Algorithms
 * Traversals (BFS, DFS, Level Order Traversal)
 * Topological Sort
 * Print graphs for easy debugging. Multiple formats for printing graphs
