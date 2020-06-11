@@ -13,7 +13,7 @@ void linear_graph() {
 
     vector<int> reference_result = {4, 3, 2, 1, 0};
     vector<int> result;
-    topological_sort(edgeList.get_num_nodes(), &edgeList, result);
+    topological_sort(&edgeList, result);
 
     for (const int node: result) cout << node << "\t";
     cout << endl;
@@ -32,7 +32,7 @@ void random_graph() {
 
     vector<int> reference_result = {0, 2, 1, 3};
     vector<int> result;
-    topological_sort(4, graph1, result);
+    topological_sort(graph1, result);
 
     for (const int node: result) cout << node << "\t";
     cout << endl;

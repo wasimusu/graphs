@@ -74,15 +74,15 @@ int mst_kruskal(graph *graph) {
         min_cost += edge[2];
 
         // Add new edges to the list of exploration
-        for (int i = 1; i < edge_list.size(); i++) {
-            if (visited[i]) continue;
-            auto &_edge = edge_list[i];
+        for (int j = 1; j < edge_list.size(); j++) {
+            if (visited[j]) continue;
+            auto &_edge = edge_list[j];
 
             if (!(explore.count(_edge[0]) ^ explore.count(_edge[1]))) continue;
 
             pq.push_back(_edge);
             std::push_heap(pq.begin(), pq.end(), compare);
-            visited[i] = true;
+            visited[j] = true;
         }
 
         if (pq.empty()) break;

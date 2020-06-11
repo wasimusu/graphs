@@ -1,6 +1,12 @@
+os: linux
+dist: trusty
 language: c++
-# we don't have any dependency to install
-#install: ignore
 compiler:
   - clang
   - gcc
+
+script:
+  mkdir build
+  cd mkdir
+  cmake ..
+  make

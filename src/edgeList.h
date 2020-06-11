@@ -34,7 +34,7 @@ public:
     bool add_edge(std::vector<int> edge) {
         if (edge.size() < 2)
             throw std::invalid_argument(
-                    "Two or three values describe an edge. " + std::to_string(edge.size()) + " provided");
+                    "2 or 3 values describe an edge. " + std::to_string(edge.size()) + " provided");
 
         if (_edges.count({edge[0], edge[1]})) {
             return false;
@@ -107,11 +107,6 @@ public:
             adjList[edge[0]].push_back(edge[1]);
         }
 
-        for (const auto list: adjList) {
-            for (const auto node: list) std::cout << node << " ";
-            std::cout << '\n';
-        }
-
         return adjList;
     }
 
@@ -163,5 +158,9 @@ public:
         return os;
     }
 
-    ~edgeList() override = default;
+    ~edgeList() {
+        // Do not double free
+        delete[] indegree;
+        delete[] adjMatrix;
+    };
 };

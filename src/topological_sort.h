@@ -7,10 +7,11 @@
 /**
  * If the nodes are not enumerated in 0 base, then there is segfault and allocated memory won't be released
  * */
-void topological_sort(int num_nodes, graph *graph, std::vector<int> &result) {
+void topological_sort(graph *graph, std::vector<int> &result) {
 
     auto adjacent = graph->get_adjacentMatrix();
     int *indegree = graph->get_indegree();
+    int num_nodes = graph->get_num_nodes();
 
     std::deque<int> source;
     for (int node = 0; node < num_nodes; node++) {

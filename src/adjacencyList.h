@@ -1,3 +1,8 @@
+/**
+ * Implements data structure for representation of graphs as adjacency list.
+ * For each vertex, we have it's list of neighbors
+ * */
+
 #pragma once
 
 #include "graph.h"
