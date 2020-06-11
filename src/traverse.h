@@ -1,15 +1,15 @@
-#ifndef GRAPHS_TRAVERSE_H
-#define GRAPHS_TRAVERSE_H
-
-#include <queue>
-#include <vector>
-
 /**
  * traverse.h implements traversal methods for graphs.
  * It does not implement inorder, preorder and postorder traversal because
  * they make sense only for binary trees and binary search trees
  * */
 
+#pragma once
+#ifndef GRAPHS_TRAVERSE_H
+#define GRAPHS_TRAVERSE_H
+
+#include <queue>
+#include <vector>
 
 /**
  * @brief Implements iterative algorithm for breadth first search for a graph.
@@ -29,7 +29,7 @@ void bfs(graph &graph, int source_node, std::vector<int> &result) {
         auto node = queue.front();
         queue.pop();
 
-        if(visited[node]) continue;
+        if (visited[node]) continue;
         visited[node] = true;
 
         result.push_back(node);
@@ -57,7 +57,7 @@ void dfs(graph &graph, int source_node, std::vector<int> &result) {
         auto node = stack.back();
         stack.pop_back();
 
-        if(visited[node]) continue;
+        if (visited[node]) continue;
         visited[node] = true;
 
         result.push_back(node);
@@ -84,7 +84,7 @@ void level_order_traversal(graph &graph, int source_node, std::vector<std::vecto
 
         for (int node: parent) {
 
-            if(visited[node]) continue;
+            if (visited[node]) continue;
             visited[node] = true;
 
             for (int child: edges[node]) {

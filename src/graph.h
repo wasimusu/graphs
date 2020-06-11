@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GRAPHS_GRAPH_H
 #define GRAPHS_GRAPH_H
 

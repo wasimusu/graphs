@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GRAPHS_MST_H
 #define GRAPHS_MST_H
 
@@ -59,31 +60,24 @@ int mst_kruskal(graph *graph) {
 
     for (int i = 0; i < edge_list.size(); i++) {
         auto edge = pq[0];
-//        std::cout << edge[0] << ", " << edge[1] <<", " << edge[2] << "\n";
         std::pop_heap(pq.begin(), pq.end(), compare);
         pq.pop_back();
 
-
-//        std::cout << "Explore : "; for(int i: explore) std::cout << i << "\t"; std::cout << "\t";
-//        std::cout << "Check: " << edge[0] << ", " << edge[1] << "\t" << explore.count(edge[0]) << explore.count(edge[1]) << "\n";
         if (explore.count(edge[0]) && explore.count(edge[1])) continue;
 
         explore.insert(edge[0]);
         explore.insert(edge[1]);
-//        std::cout << "Added : " << edge[0] << ", " << edge[1] << ", " << edge[2] << std::endl;
         min_cost += edge[2];
 
         // Add new edges to the list of exploration
-//        std::cout << "New options \n";
         for (int i = 1; i < edge_list.size(); i++) {
             if (visited[i]) continue;
-            auto& _edge = edge_list[i];
+            auto &_edge = edge_list[i];
 
             if (!(explore.count(_edge[0]) ^ explore.count(_edge[1]))) continue;
 
             pq.push_back(_edge);
             std::push_heap(pq.begin(), pq.end(), compare);
-//            std::cout << _edge[0] << ", " << _edge[1] << ", " << _edge[2] << "\t" << std::endl;
             visited[i] = true;
         }
 

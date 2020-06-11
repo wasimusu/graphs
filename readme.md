@@ -46,7 +46,6 @@ The value of a graph library lies in making it easy to construct and analyze gra
 
 ### Upcoming features/development
 * Benchmarks
-* Google Tests
 
 ### Questions that can be solved by graphs
 * Find dependency between files. Do topological sort on a graph representing files.

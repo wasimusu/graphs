@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GRAPHS_TOPOLOGICAL_SORT_H
 #define GRAPHS_TOPOLOGICAL_SORT_H
 

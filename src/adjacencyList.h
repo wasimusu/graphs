@@ -1,6 +1,7 @@
 #pragma once
 
 #include "graph.h"
+#include <algorithm>
 
 class adjacencyList : public graph {
 private:
@@ -9,7 +10,7 @@ public:
     adjacencyList() = default;
 
     bool add_edge(int start, int end, int weight = 0) override {
-        if (find(adjList[start].begin(), adjList[start].end(), end) == adjList[start].end())
+        if (std::find(adjList[start].begin(), adjList[start].end(), end) == adjList[start].end())
             return false;
 
         adjList[start].push_back(end);

@@ -4,41 +4,46 @@
 
 using namespace std;
 
+
+void linear_graph() {
+    edgeList edgeList;
+    int num_nodes = 10;
+    for (int i = 0; i < num_nodes - 1; i++) {
+        edgeList.add_edge({i, i + 1, 1});
+    }
+
+    for (int start = 0; start < num_nodes; start++) {
+        for (int end = 0; end < num_nodes; end++) {
+            int res = dijkstra_shortest_distance(edgeList, start, end);
+            std::cout << res << "\t" << abs(end - start) << "\n";
+        }
+    }
+}
+
+
+void all_pairs_graph() {
+    edgeList edgeList;
+    int num_nodes = 10;
+    for (int i = 0; i < num_nodes; i++) {
+        for (int j = 0; j < num_nodes; j++) {
+            edgeList.add_edge({i, j, 1});
+        }
+    }
+
+    for (int start = 0; start < num_nodes; start++) {
+        for (int end = 0; end < num_nodes; end++) {
+            if (start == end) continue;
+            int res = dijkstra_shortest_distance(edgeList, start, end);
+            std::cout << res << "\t" << 1 << "\n";
+        }
+    }
+}
+
 int main() {
 
-    graph *graph1 = new edgeList(true);
-
-    cout << graph1->add_edge({0, 1, 24});
-    cout << graph1->add_edge({1, 0, 24});
-    cout << graph1->add_edge({0, 3, 20});
-    cout << graph1->add_edge({3, 0, 20});
-    cout << graph1->add_edge({2, 0, 3});
-    cout << graph1->add_edge({0, 2, 3});
-    cout << graph1->add_edge({3, 2, 12});
-    cout << graph1->add_edge({2, 3, 12});
-//    cout << graph1->add_edge({2, 4, 4});
-//    cout << graph1->add_edge({4, 2, 4}) << endl;
-
-//    bool a = graph1->add_edge({0, 1, 3});
-//    bool b = graph1->add_edge({0, 2, 4});
-//    bool c = graph1->add_edge({3, 1, 6});
-//    bool d = graph1->add_edge({4, 1, 2});
-//    bool e = graph1->add_edge({1, 2, 5});
-//    bool f = graph1->add_edge({2, 4, 7});
-//    cout << a << b << c << d << e << f << endl;
-
-    auto n = graph1->get_num_nodes();
-    cout << n << endl;
-
-    int result = dijkstra_shortest_distance(*graph1, 0, 3);
-    cout << result << endl;
-
-    auto dd = all_pair_shortest_path(*graph1);
-    n = graph1->get_num_nodes();
-    for(int r = 0; r < n; r++){
-        for(int c = 0; c < n; c++)
-            std::cout << dd[r][c] << " "; std::cout << '\n';
-    }
+    all_pairs_graph();
+    std::cout << std::endl;
+    linear_graph();
 
     return 0;
 }

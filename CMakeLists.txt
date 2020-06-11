@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(graphs)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 # Setup tests
 add_subdirectory(test/googletest)
@@ -19,20 +19,19 @@ add_executable(dijkstra_demo sample/distance_demo.cpp)
 
 
 # All tests
-add_executable(alltests
-        test/src/test_main.cpp
-        test/src/edgeList.cpp
-        test/src/adjacencyList.cpp
-        test/src/adjancencyMatrix.cpp
-        test/src/distance.cpp
-        test/src/mst.cpp
-        test/src/topological_sort.cpp
-        test/src/traverse.cpp
-        )
+#add_executable(alltests
+#        test/src/test_main.cpp
+#        test/src/edgeList.cpp
+#        test/src/adjacencyList.cpp
+#        test/src/adjancencyMatrix.cpp
+#        test/src/distance.cpp
+#        test/src/mst.cpp
+#        test/src/topological_sort.cpp
+#        test/src/traverse.cpp
+#        )
 
-target_link_libraries(alltests gtest gtest_main)
+#target_link_libraries(alltests gtest gtest_main)
 
 # Individual tests
-add_executable(sample_test test/src/distance.cpp)
-
-target_link_libraries(sample_test gtest gtest_main)
+add_executable(distance_test test/src/distance.cpp)
+target_link_libraries(distance_test gtest gtest_main)
