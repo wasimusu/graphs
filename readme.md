@@ -1,5 +1,5 @@
 ## Graphs
-An open-source modern graph library built in C++ for exploring graphs.
+An open-source modern graph library built in C++ for exploring graphs with focus on ease of use.
 
 ### Features
 * Ease of use.
