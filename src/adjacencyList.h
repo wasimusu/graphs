@@ -4,6 +4,8 @@
  * */
 
 #pragma once
+#ifndef GRAPHS_ADJACENCYLIST_H
+#define GRAPHS_ADJACENCYLIST_H
 
 #include "graph.h"
 #include <algorithm>
@@ -25,3 +27,5 @@ public:
 
     ~adjacencyList() override = default;
 };
+
+#endif //GRAPHS_ADJACENCYLIST_H

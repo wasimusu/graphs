@@ -1,3 +1,4 @@
+#pragma once
 #include "../../src/graphs.h"
 #include "gtest/gtest.h"
 
@@ -52,7 +53,7 @@ TEST(edges, remove_edge) {
 
 TEST(indegree, directed1) {
 
-    edgeList edgeList;
+    edgeList edgeList(false);
     int num_nodes = 10;
     for (int i = 0; i < num_nodes - 1; i++) {
         edgeList.add_edge({i, i + 1});

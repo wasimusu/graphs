@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(test/googletest)
 include_directories(test/googletest/googletest/include)
 
-add_executable(exe
+add_executable(graphs
         src/main.cpp
         src/graphs.h
         )
@@ -20,19 +20,13 @@ add_executable(bellman_ford_demo sample/bellman_ford_demo.cpp)
 
 
 # All tests
-#add_executable(alltests
-#        test/src/test_main.cpp
-#        test/src/edgeList.cpp
-#        test/src/adjacencyList.cpp
-#        test/src/adjancencyMatrix.cpp
-#        test/src/distance.cpp
-#        test/src/mst.cpp
-#        test/src/topological_sort.cpp
-#        test/src/traverse.cpp
-#        )
+add_executable(tests test/src/gtest_main.cpp)
 
-#target_link_libraries(alltests gtest gtest_main)
+target_link_libraries(tests gtest gtest_main)
 
 # Individual tests
-add_executable(distance_test test/src/distance.cpp)
+add_executable(distance_test test/src/test_distance.h)
 target_link_libraries(distance_test gtest gtest_main)
+
+add_executable(edge_test test/src/test_edgeList.h)
+target_link_libraries(edge_test gtest gtest_main)

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef GRAPHS_EDGELIST_H
+#define GRAPHS_EDGELIST_H
 
 #include <set>
 #include <unordered_set>
@@ -158,9 +160,7 @@ public:
         return os;
     }
 
-    ~edgeList() {
-        // Do not double free
-        delete[] indegree;
-        delete[] adjMatrix;
-    };
+    ~edgeList() = default;
 };
+
+#endif //GRAPHS_EDGELIST_H

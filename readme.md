@@ -1,6 +1,9 @@
 ## Graphs
 An open-source modern graph library built in C++ for exploring graphs with focus on ease of use.
 
+#### Build Status
+<img src="https://travis-ci.com/wasimusu/graphs.svg?branch=master" width="100">
+
 ### Features
 * Ease of use.
 * Easily discoverable member functions
@@ -45,7 +48,6 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Serialization/deserialization
 
 ### Upcoming features/development
-* CI/CD
 * Benchmarks
 
 ### Questions that can be solved by graphs

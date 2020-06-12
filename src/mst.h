@@ -2,9 +2,9 @@
  * @brief Implements algorithms to compute minimum spanning tree for graphs
  * */
 
-#pragma once
 #ifndef GRAPHS_MST_H
 #define GRAPHS_MST_H
+#pragma once
 
 /**
  * @brief implements prim's minimum spanning tree
@@ -42,6 +42,7 @@ int mst_prim(graph *graph) {
 
     return min_cost;
 }
+
 
 /**
  * @brief implements kruskal's minimum spanning tree
