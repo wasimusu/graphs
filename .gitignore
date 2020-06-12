@@ -6,3 +6,5 @@
 !LICENSE
 !CMakeLists.txt
 !.travis.yml
+!test
+!install.sh
