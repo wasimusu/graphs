@@ -18,7 +18,8 @@ int dijkstra_shortest_distance(graph &graph, int source_node, int target_node) {
 
     // Go through each promising node and relax weights
     while (!pq.empty()) {
-        auto[node, cost] = pq[0];
+//        auto[node, cost] = pq[0];
+        int node = pq[0].first, cost = pq[0].second;
         std::pop_heap(pq.begin(), pq.end(), compare_min);
         pq.pop_back();
 
