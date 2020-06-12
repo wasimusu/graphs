@@ -5,9 +5,11 @@ compiler:
   - clang
   - gcc
 
+#  cd graphs && mkdir build && cd build && cmake .. && make
+
 script:
-  -cd graphs
-  -mkdir build
-  -cd build
-  -cmake ..
-  -make
+  cd graphs
+  &&mkdir build
+  &&cd build
+  &&cmake ..
+  &&make
