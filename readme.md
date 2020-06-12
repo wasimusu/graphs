@@ -13,15 +13,13 @@ An open-source modern graph library built in C++ for exploring graphs with focus
 ### Platform
 * CMake
 * C++11 to C++20
-* Ubuntu 18.04
+* Clang
+* Linux (Xenial/Ubuntu 18.04)
 
 ### Build
 ```
 cd graphs
-mkdir build
-cd build
-cmake ..
-make
+sh install.sh
 ```
 
 ### Data Structures for graph representation
@@ -29,9 +27,9 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * adjacencyList
 * adjacencyMatrix
 * edgeList
+* Print graphs for easy debugging. Multiple formats for printing graphs
 
 ### Algorithms
-* Print graphs for easy debugging. Multiple formats for printing graphs
 * Traversals (BFS, DFS, Level Order Traversal)
 * Topological Sort
 * Prim's Minimum Spanning Tree

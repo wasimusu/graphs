@@ -7,3 +7,6 @@ mkdir build
 cd build
 cmake ..
 make
+pwd
+./test/tests 
+./graphs
