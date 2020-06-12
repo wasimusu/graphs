@@ -8,7 +8,6 @@ add_subdirectory(test)
 
 add_executable(graphs
         src/main.cpp
-        src/graphs.h
         )
 
 # Sample codes
