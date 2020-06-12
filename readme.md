@@ -19,7 +19,7 @@ An open-source modern graph library built in C++ for exploring graphs with focus
 ```
 cd graphs
 mkdir build
-cd mkdir
+cd build
 cmake ..
 make
 ```

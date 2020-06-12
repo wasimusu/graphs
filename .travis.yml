@@ -6,7 +6,8 @@ compiler:
   - gcc
 
 script:
-  mkdir build
-  cd mkdir
-  cmake ..
-  make
+  -cd graphs
+  -mkdir build
+  -cd build
+  -cmake ..
+  -make
