@@ -4,7 +4,7 @@
 
 #include "graph.h"
 
-class adjanceyMatrix : public graph {
+class adjacencyMatrix : public graph {
 private:
     int **adjMatrix;
     int num_nodes = 0;
@@ -16,7 +16,7 @@ public:
      * @param[bool] directed: is the graph directed or not?
      * @returns void
      * */
-    explicit adjanceyMatrix(const int num_nodes, bool directed = true) : num_nodes(num_nodes), directed(directed) {
+    explicit adjacencyMatrix(const int num_nodes, bool directed = true) : num_nodes(num_nodes), directed(directed) {
         adjMatrix = new int *[num_nodes];
         for (int i = 0; i < num_nodes; i++) {
             adjMatrix[i] = new int[num_nodes];
@@ -114,7 +114,7 @@ public:
         return indegree;
     }
 
-    ~adjanceyMatrix() override {
+    ~adjacencyMatrix() override {
         for (int i = 0; i < num_nodes; i++) {
             delete[] adjMatrix[i];
         }

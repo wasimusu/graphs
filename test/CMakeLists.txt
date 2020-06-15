@@ -18,3 +18,12 @@ target_link_libraries(distance_test gtest gtest_main)
 
 add_executable(edge_test src/test_edgeList.h)
 target_link_libraries(edge_test gtest gtest_main)
+
+add_executable(topsort_test src/test_topological_sort.h)
+target_link_libraries(topsort_test gtest gtest_main)
+
+add_executable(traverse_test src/test_traverse.h)
+target_link_libraries(traverse_test gtest gtest_main)
+
+add_executable(mst_test src/test_mst.h)
+target_link_libraries(mst_test gtest gtest_main)

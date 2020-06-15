@@ -14,8 +14,8 @@ void linear_graph() {
 
     for (int start = 0; start < num_nodes; start++) {
         for (int end = 0; end < num_nodes; end++) {
-            int res = dijkstra_shortest_distance(edgeList, start, end);
-            std::cout << res << "\t" << abs(end - start) << "\n";
+            auto res = dijkstra_shortest_distance(edgeList, start);
+            std::cout << res[end] << "\t" << abs(end - start) << "\n";
         }
     }
 }
@@ -33,8 +33,8 @@ void all_pairs_graph() {
     for (int start = 0; start < num_nodes; start++) {
         for (int end = 0; end < num_nodes; end++) {
             if (start == end) continue;
-            int res = dijkstra_shortest_distance(edgeList, start, end);
-            std::cout << res << "\t" << 1 << "\n";
+            auto res = dijkstra_shortest_distance(edgeList, start);
+            std::cout << res[end] << "\t" << 1 << "\n";
         }
     }
 }

@@ -4,10 +4,15 @@
 
 using namespace std;
 
-static void benchmark_push_back(benchmark::State &state) {
+static void benchmark_add_edges(benchmark::State &state) {
     while (state.KeepRunning()) {
-        std::vector<int> v;
-        v.push_back(42);
+        edgeList edgeList(true);
+        int num_nodes = 1000;
+        for (int i = 0; i < num_nodes; i++) {
+            for (int j = 0; j < num_nodes; j++) {
+                auto added = edgeList.add_edge({i, j});
+            }
+        }
     }
 }
 

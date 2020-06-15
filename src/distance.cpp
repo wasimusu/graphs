@@ -1,11 +1,10 @@
 #include "distance.h"
 
-int dijkstra_shortest_distance(graph &graph, int source_node, int target_node) {
+std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node) {
 
     auto adjacent = graph.get_adjacentMatrix();
     int n = graph.get_num_nodes();
-    int distances[n];
-    std::fill(distances, distances + n + 1, std::numeric_limits<int>::max());
+    std::vector<int> distances(n + 1, std::numeric_limits<int>::max());
     distances[source_node] = 0;
     std::vector<bool> visited(n, false);
 
@@ -41,7 +40,7 @@ int dijkstra_shortest_distance(graph &graph, int source_node, int target_node) {
 //    }
 //    delete[] adjacent;
 
-    return distances[target_node];
+    return distances;
 }
 
 int **all_pair_shortest_path(graph &graph) {

@@ -13,9 +13,9 @@
  * Assumes the nodes are enumerated in 0 base.
  *
  * @param[int] source_node, target_node: the two nodes for which shortest connecting path is to be computed
- * @returns[int]: shortest path connecting two input nodes
+ * @returns[vector<int>]: shortest path between source_node and all other nodes
  * **/
-int dijkstra_shortest_distance(graph &graph, int source_node, int target_node);
+std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node);
 
 
 /*
