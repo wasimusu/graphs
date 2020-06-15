@@ -103,7 +103,7 @@ public:
      * @brief compute indegree for all the nodes in the graph
      * @returns[int*] indegree for all the nodes
      * */
-    int *get_indegree() {
+    int *get_indegree() final{
         indegree = new int[num_nodes];
         for (int start = 0; start < num_nodes; start++) {
             for (int end = 0; end < num_nodes; end++) {

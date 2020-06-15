@@ -1,4 +1,5 @@
 #pragma once
+
 #include "../../src/graphs.h"
 #include "gtest/gtest.h"
 
@@ -44,7 +45,6 @@ TEST(edges, add_edge_undirected) {
     edgeList edgeList;
 
 
-
 }
 
 TEST(edges, remove_edge) {
@@ -65,9 +65,10 @@ TEST(indegree, directed1) {
     indegree[0] = 1;
     indegree[num_nodes - 1] = 1;
 
-    auto actual_indegree = edgeList.get_indegree();
-    bool res = std::equal(indegree, indegree + num_nodes, actual_indegree);
+    auto expected_indegree = edgeList.get_indegree();
+    bool res = std::equal(indegree, indegree + num_nodes, expected_indegree);
     EXPECT_EQ(res, true);
+    delete[] expected_indegree;
 }
 
 TEST(indegree, directed2) {
@@ -88,6 +89,7 @@ TEST(indegree, directed2) {
     auto actual_indegree = edgeList.get_indegree();
     bool res = std::equal(indegree, indegree + num_nodes, actual_indegree);
     EXPECT_EQ(res, true);
+    delete[] actual_indegree;
 }
 
 

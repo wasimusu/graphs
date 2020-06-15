@@ -1,6 +1,8 @@
 ## Graphs
 An open-source modern graph library built in C++ for exploring graphs with focus on ease of use.
 
+It uses Google Tests for unit testing and Google Benchmark for benchmarking the library. Measure before optimization.
+
 #### Build Status
 <img src="https://travis-ci.com/wasimusu/graphs.svg?branch=master" width="100">
 
@@ -38,15 +40,12 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Floyd Warshall All Pairs Shortest Path Algorithm
 * Bellman Ford Shortest Path Algorithm (Works for negative edges)
 
-#### To be published by June 14, 2014
+#### To be published by June 21, 2014
 * Connected Components
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Tarjan's Strongly Connected Components
 * Is the graph bipartite?
 * Serialization/deserialization
-
-### Upcoming features/development
-* Benchmarks
 
 ### Questions that can be solved by graphs
 * Find dependency between files. Do topological sort on a graph representing files.
@@ -58,3 +57,8 @@ Just find the shortest distance between two people (the edges should have unit w
 ### Goals
 * Double the speed of the whole library.
 * Reduce memory consumption and memory leaks
+
+### Todo Devops
+* Test the library for multiple versions of C++
+* Test the library on multiple OS
+* Include bezel build
