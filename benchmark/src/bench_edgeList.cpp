@@ -16,6 +16,11 @@ static void benchmark_add_edges(benchmark::State &state) {
     }
 }
 
-BENCHMARK(benchmark_push_back);
+static void benchmark_remove_edges(benchmark::State &state) {
+    while (state.KeepRunning()) {
+    }
+}
+
+BENCHMARK(benchmark_add_edges);
 
 BENCHMARK_MAIN();

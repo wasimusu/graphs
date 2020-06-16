@@ -1,10 +1,10 @@
 #include "distance.h"
 
-std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node) {
+std::vector<int> dijkstra_shortest_distance(graph &graph, const int source_node) {
 
     auto adjacent = graph.get_adjacentMatrix();
     int n = graph.get_num_nodes();
-    std::vector<int> distances(n + 1, std::numeric_limits<int>::max());
+    std::vector<int> distances(n, std::numeric_limits<int>::max());
     distances[source_node] = 0;
     std::vector<bool> visited(n, false);
 
@@ -34,6 +34,8 @@ std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node) {
             std::push_heap(pq.begin(), pq.end(), compare_min);
         }
     }
+
+    std::replace(distances.begin(), distances.end(), std::numeric_limits<int>::max(), -1);
 
 //    for (int i = 0; i < n; i++) {
 //        delete[] adjacent[i];

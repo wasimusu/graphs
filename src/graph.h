@@ -11,7 +11,7 @@ class graph {
 protected:
     int **adjMatrix = nullptr;
     int *indegree = nullptr;
-    std::vector<std::vector<int>> adjList;
+    std::unordered_map<int, std::vector<int>> adjList;
     std::vector<std::vector<int>> edges;
 public:
     graph() = default;
@@ -24,13 +24,19 @@ public:
         return false;
     }
 
-    virtual bool add_vertex() { return false; }
+    virtual bool remove_edge(const int start, const int end) {
+        return false;
+    }
+
+    virtual bool remove_edge(const std::vector<int> &edge) {
+        return false;
+    }
 
     virtual int **get_adjacentMatrix() {
         return adjMatrix;
     }
 
-    virtual std::vector<std::vector<int>> get_adjList() {
+    virtual std::unordered_map<int, std::vector<int>> get_adjList() {
         return adjList;
     }
 
@@ -45,10 +51,6 @@ public:
     virtual int get_num_nodes() const {
         return 0;
     }
-
-    virtual void print_edges() {}
-
-
 
 };
 

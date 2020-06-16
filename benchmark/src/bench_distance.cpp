@@ -23,13 +23,25 @@ static void benchmark_all_pairs_shortest_path(benchmark::State &state, graph &gr
 }
 
 edgeList directed_graph(true);
+//directed_graph.add_edge({0, 1, 6});
+//edgeList.add_edge({0, 2, 5});
+//edgeList.add_edge({0, 3, 5});
+//edgeList.add_edge({1, 4, -1});
+//edgeList.add_edge({2, 1, -2});
+//edgeList.add_edge({3, 2, -2});
+//edgeList.add_edge({2, 4, 1});
+//edgeList.add_edge({3, 5, -1});
+//edgeList.add_edge({5, 6, 3});
+//edgeList.add_edge({4, 6, 3});
+
+
 edgeList undirected_graph(false);
 
-BENCHMARK_CAPTURE(benchmark_dijkstra, directed_graph);
-BENCHMARK_CAPTURE(benchmark_dijkstra, undirected_graph);
-BENCHMARK_CAPTURE(benchmark_bellman_ford, directed_graph);
-BENCHMARK_CAPTURE(benchmark_bellman_ford, undirected_graph);
-BENCHMARK_CAPTURE(benchmark_all_pairs_shortest_path, directed_graph);
-BENCHMARK_CAPTURE(benchmark_all_pairs_shortest_path, undirected_graph);
+BENCHMARK_CAPTURE(benchmark_dijkstra, directed, directed_graph);
+BENCHMARK_CAPTURE(benchmark_dijkstra, undirected, undirected_graph);
+BENCHMARK_CAPTURE(benchmark_bellman_ford, directed, directed_graph);
+BENCHMARK_CAPTURE(benchmark_bellman_ford, undirected, undirected_graph);
+BENCHMARK_CAPTURE(benchmark_all_pairs_shortest_path, directed, directed_graph);
+BENCHMARK_CAPTURE(benchmark_all_pairs_shortest_path, undirected, undirected_graph);
 
 BENCHMARK_MAIN();

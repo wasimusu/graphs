@@ -19,9 +19,9 @@ static void benchmark_kruskal(benchmark::State &state, graph& graph) {
 edgeList directed_graph(true);
 edgeList undirected_graph(false);
 
-BENCHMARK_CAPTURE(benchmark_prim, directed_graph);
-BENCHMARK_CAPTURE(benchmark_prim, undirected_graph);
-BENCHMARK_CAPTURE(benchmark_kruskal, directed_graph);
-BENCHMARK_CAPTURE(benchmark_kruskal, undirected_graph);
+BENCHMARK_CAPTURE(benchmark_prim, directed, directed_graph);
+BENCHMARK_CAPTURE(benchmark_prim, undirected, undirected_graph);
+BENCHMARK_CAPTURE(benchmark_kruskal, directed, directed_graph);
+BENCHMARK_CAPTURE(benchmark_kruskal, undirected, undirected_graph);
 
 BENCHMARK_MAIN();

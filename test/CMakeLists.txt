@@ -1,9 +1,3 @@
-cmake_minimum_required(VERSION 3.0)
-project(graphs_test)
-
-set(CMAKE_CXX_STANDARD 17)
-
-
 # Setup tests
 add_subdirectory(googletest)
 include_directories(googletest/googletest/include)
@@ -27,3 +21,9 @@ target_link_libraries(traverse_test gtest gtest_main)
 
 add_executable(mst_test src/test_mst.h)
 target_link_libraries(mst_test gtest gtest_main)
+
+add_executable(adjMatrix_test src/test_adjancencyMatrix.h)
+target_link_libraries(adjMatrix_test gtest gtest_main)
+
+add_executable(adjList_test src/test_adjacencyList.h)
+target_link_libraries(adjList_test gtest gtest_main)

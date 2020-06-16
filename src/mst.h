@@ -12,8 +12,6 @@
  * @return pair[int, vector<vector<int>>]: returns pair of total minimum cost and the nodes that will span the tree
  * */
 int mst_prim(graph *graph) {
-    // Let's assume that there is no starting point
-
     // Comparator for a min-heap
     auto compare = [](const std::vector<int> &edgeA, const std::vector<int> &edgeB) {
         return edgeA[2] > edgeB[2];
@@ -26,7 +24,7 @@ int mst_prim(graph *graph) {
     std::unordered_set<int> visited;
 
     int n = edge_list.size();
-    int start_node, end_node, cost = 0; // initialize variables describing an edge
+    int start_node, end_node, cost = 0; // variables describing an edge
     for (int i = 0; i < n; i++) {
         start_node = edge_list[0][0], end_node = edge_list[0][1], cost = edge_list[0][2];
 
@@ -59,6 +57,7 @@ int mst_kruskal(graph *graph) {
     std::make_heap(edge_list.begin(), edge_list.end(), compare);
     std::unordered_set<int> explore{};
     std::vector<std::vector<int>> pq{edge_list[0]};
+
     int min_cost = 0;
     std::vector<int> visited(edge_list.size(), false);
     visited[0] = true;

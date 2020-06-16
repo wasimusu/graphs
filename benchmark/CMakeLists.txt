@@ -10,3 +10,6 @@ target_link_libraries(bench_distance benchmark)
 
 add_executable(bench_mst src/bench_mst.cpp)
 target_link_libraries(bench_mst benchmark)
+
+add_executable(bench_traverse src/bench_traverse.cpp)
+target_link_libraries(bench_traverse benchmark)

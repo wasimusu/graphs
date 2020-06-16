@@ -1,6 +1,11 @@
 #include "gtest/gtest.h"
+#include "test_adjacencyList.h"
+#include "test_adjancencyMatrix.h"
 #include "test_distance.h"
 #include "test_edgeList.h"
+#include "test_mst.h"
+#include "test_topological_sort.h"
+#include "test_traverse.h"
 
 int main(int argc, char **argv) {
     std::cout << "Running tests. Brace yourself\n" << std::endl;
