@@ -21,6 +21,7 @@ public:
         adjMatrix = new int *[num_nodes];
         for (int i = 0; i < num_nodes; i++) {
             adjMatrix[i] = new int[num_nodes];
+            std::fill(adjMatrix[i], adjMatrix[i] + num_nodes, 0);
         }
     }
 
@@ -30,7 +31,7 @@ public:
      * @returns[bool] true if the edge can be added to the graph because it is valid and does not already exist
      * */
     inline bool is_new_edge(const int start, const int end) {
-        return (start < 0 || end < 0 || start >= num_nodes || end >= num_nodes || adjMatrix[start][end] != 0);
+        return (start < 0 || end < 0 || start >= num_nodes || end >= num_nodes || adjMatrix[start][end] == 0);
     }
 
 
@@ -40,22 +41,7 @@ public:
      * @returns[bool] was the edge successfully inserted into the graph
      * */
     bool add_edge(const int start, const int end, const int weight = 0) override {
-        if (start == end) return false;
-        if (!is_new_edge(start, end)) return false;
-
-        if (weight == 0) {
-            adjMatrix[start][end] = 1;
-            if (!directed) {
-                adjMatrix[end][start] = 1;
-            }
-        } else {
-            adjMatrix[start][end] = weight;
-            if (!directed) {
-                adjMatrix[end][start] = weight;
-            }
-        }
-
-        return true;
+        return weight == 0 ? add_edge({start, end}) : add_edge({start, end, weight});
     }
 
     /**
@@ -125,10 +111,12 @@ public:
      * @returns[int*] indegree for all the nodes
      * */
     int *get_indegree() final {
+        num_nodes = get_num_nodes();
         indegree = new int[num_nodes];
+        std::fill(indegree, indegree + num_nodes, 0);
         for (int start = 0; start < num_nodes; start++) {
             for (int end = 0; end < num_nodes; end++) {
-                ++indegree[end];
+                indegree[end] += adjMatrix[start][end] != 0;
             }
         }
 

@@ -83,30 +83,31 @@ public:
         if (start == end || is_new_edge(start, end)) return false;
 
         const int num_edges = edges.size();
-        int deleted = 0;
         int target = (directed ? 1 : 2);
 
+        int id = 0;
         for (int i = 0; i < num_edges; i++) {
-            if (!directed && edges[i][1] == start && edges[i][0] == end) {
+            if (!directed && edges[id][1] == start && edges[id][0] == end) {
                 --indegree_counter[start];
-                edges.erase(edges.begin() + i - deleted);
-                ++deleted;
+                edges.erase(edges.begin() + id);
                 _edges.erase({end, start});
-                if (deleted == target) break;
+                if (--target == 0) break;
+                continue;
             }
 
-            if (edges[i][0] == start && edges[i][1] == end) {
+            if (edges[id][0] == start && edges[id][1] == end) {
                 --indegree_counter[end];
-                edges.erase(edges.begin() + i - deleted);
+                edges.erase(edges.begin() + id);
                 _edges.erase({start, end});
-                ++deleted;
-                if (deleted == target) break;
+                if (--target == 0) break;
+                continue;
             }
+
+            ++id;
         }
 
         if (indegree_counter[start] == 0) nodes.erase(start);
         if (indegree_counter[end] == 0) nodes.erase(end);
-
         return true;
     }
 

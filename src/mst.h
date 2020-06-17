@@ -11,7 +11,7 @@
  * Requires weighted edge list
  * @return pair[int, vector<vector<int>>]: returns pair of total minimum cost and the nodes that will span the tree
  * */
-int mst_prim(graph *graph) {
+int mst_kruskal(graph *graph) {
     // Comparator for a min-heap
     auto compare = [](const std::vector<int> &edgeA, const std::vector<int> &edgeB) {
         return edgeA[2] > edgeB[2];
@@ -31,11 +31,13 @@ int mst_prim(graph *graph) {
         std::pop_heap(edge_list.begin(), edge_list.end(), compare);
         edge_list.pop_back();
 
+        std::cout << "\n" << start_node << ", " << end_node << ", " << cost << "\t";
         if (visited.count(start_node) && visited.count(end_node)) continue;
 
         visited.insert(start_node);
         visited.insert(end_node);
         min_cost += cost;
+        std::cout << min_cost;
     }
 
     return min_cost;
@@ -46,7 +48,7 @@ int mst_prim(graph *graph) {
  * @brief implements kruskal's minimum spanning tree
  * Requires weighted edge list
  * */
-int mst_kruskal(graph *graph) {
+int mst_prim(graph *graph) {
 
     // Comparator for a min-heap
     auto compare = [](const std::vector<int> &edgeA, const std::vector<int> &edgeB) {

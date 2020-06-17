@@ -4,6 +4,27 @@
 #include "gtest/gtest.h"
 
 // This needs fixture because same graph can be traversed in all the different ways possible
+//class edgeListTest : public ::testing::Test {
+//protected:
+//    virtual void SetUp() {
+//        edgeList.add_edge(0, 1, 4);
+//        edgeList.add_edge(0, 2, 2);
+//        edgeList.add_edge(1, 2, 5);
+//        edgeList.add_edge(1, 3, 10);
+//        edgeList.add_edge(2, 4, 3);
+//        edgeList.add_edge(4, 3, 4);
+//        edgeList.add_edge(3, 5, 11);
+//    }
+//
+//    edgeList edgeList;
+//};
+//
+//TEST_F(edgeListTest, indegree_undirected) {
+//    auto actual_indegree = edgeList.get_indegree();
+//    int expected_indegree[6] = {2, 3, 3, 3, 2, 1};
+//    EXPECT_EQ(actual_indegree, expected_indegree);
+//}
+
 
 TEST(bfs, linear_graph) {
 

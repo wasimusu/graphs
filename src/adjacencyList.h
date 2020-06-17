@@ -42,6 +42,9 @@ public:
     }
 
     bool add_edge(std::vector<int> edge) {
+        if (edge.size() != 2 && edge.size() != 3)
+            throw std::invalid_argument(
+                    "2 or 3 values describe an edge. " + std::to_string(edge.size()) + " provided");
         return add_edge(edge[0], edge[1]);
     }
 
@@ -50,8 +53,7 @@ public:
 
         // (end, start) edge
         if (!directed) {
-            --indegree_counter[start];
-            if (indegree_counter[start] == 0) {
+            if (--indegree_counter[end] == 0) {
                 adjList.erase(end);
             } else {
                 adjList[end].erase(find(adjList[end].begin(), adjList[end].end(), start));
@@ -59,19 +61,14 @@ public:
         }
 
         // (start, end) edge
-        --indegree_counter[end];
-        if (indegree_counter[end] == 0) {
+        if (--indegree_counter[start] == 0) {
             adjList.erase(start);
         } else {
             adjList[start].erase(find(adjList[start].begin(), adjList[start].end(), end));
         }
 
-
-        if (indegree_counter[start] == 0 || indegree_counter[end] == 0) {
-            if (indegree_counter[start] == 0) { nodes.erase(start); }
-            if (indegree_counter[end] == 0) { nodes.erase(end); }
-            std::cout << "Number of nodes : " << nodes.size() << std::endl;
-        }
+        if (indegree_counter[start] == 0) { nodes.erase(start); }
+        if (indegree_counter[end] == 0) { nodes.erase(end); }
 
         return true;
     }
@@ -85,8 +82,8 @@ public:
         adjMatrix = new int *[num_nodes];
         for (int i = 0; i < num_nodes; i++) {
             adjMatrix[i] = new int[num_nodes];
+            std::fill(adjMatrix[i], adjMatrix[i] + num_nodes , 0);
         }
-        std::fill(*adjMatrix, *adjMatrix + num_nodes * num_nodes, 0);
 
         for (const auto&[parent, children]: adjList) {
             for (const auto &child: children) {
@@ -110,6 +107,7 @@ public:
 
     int *get_indegree() override {
         if (indegree) delete[] indegree;
+
         num_nodes = get_num_nodes();
         indegree = new int[num_nodes];
         std::fill(indegree, indegree + num_nodes, 0);
