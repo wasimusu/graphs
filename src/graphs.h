@@ -7,6 +7,7 @@
 #include "edgeList.h"
 #include "adjacencyList.h"
 #include "adjacencyMatrix.h"
+#include "unionfind.h"
 
 // Algorithms
 #include "mst.h"

@@ -48,10 +48,7 @@ public:
             return false;
         }
 
-        if (edge.size() == 2) {
-            if (directed) edge.push_back(1);
-            else edge.push_back(0);
-        }
+        if (edge.size() == 2) { edge.push_back(1); }
 
         if (!directed) {
             auto other_edge{edge};
@@ -129,13 +126,13 @@ public:
             std::fill(adjMatrix[i], adjMatrix[i] + num_nodes, 0);
         }
 
-        if (!directed) {
+        if (edges[0].size() == 2) {
             for (const auto &edge: edges) {
                 adjMatrix[edge[0]][edge[1]] = 1;
             }
         }
 
-        if (directed) {
+        if (edges[0].size() == 3) {
             for (const auto &edge: edges) {
                 adjMatrix[edge[0]][edge[1]] = edge[2];
             }

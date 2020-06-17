@@ -6,6 +6,7 @@
 #include "test_mst.h"
 #include "test_topological_sort.h"
 #include "test_traverse.h"
+#include "test_unionfind.h"
 
 int main(int argc, char **argv) {
     std::cout << "Running tests. Brace yourself\n" << std::endl;

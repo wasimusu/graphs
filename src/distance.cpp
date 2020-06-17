@@ -37,10 +37,10 @@ std::vector<int> dijkstra_shortest_distance(graph &graph, const int source_node)
 
     std::replace(distances.begin(), distances.end(), std::numeric_limits<int>::max(), -1);
 
-//    for (int i = 0; i < n; i++) {
-//        delete[] adjacent[i];
-//    }
-//    delete[] adjacent;
+    for (int i = 0; i < n; i++) {
+        delete[] adjacent[i];
+    }
+    delete[] adjacent;
 
     return distances;
 }

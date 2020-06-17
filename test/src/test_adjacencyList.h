@@ -29,6 +29,7 @@ TEST(adjList, add_remove_edge_directed) {
         }
     }
     EXPECT_EQ(0, adjacencyList.get_num_nodes());
+    delete[] actual_indegree;
 }
 
 TEST(adjList, add_remove_edge_undirected) {

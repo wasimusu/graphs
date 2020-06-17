@@ -82,7 +82,7 @@ public:
         adjMatrix = new int *[num_nodes];
         for (int i = 0; i < num_nodes; i++) {
             adjMatrix[i] = new int[num_nodes];
-            std::fill(adjMatrix[i], adjMatrix[i] + num_nodes , 0);
+            std::fill(adjMatrix[i], adjMatrix[i] + num_nodes, 0);
         }
 
         for (const auto&[parent, children]: adjList) {
@@ -124,7 +124,14 @@ public:
         return nodes.size();
     }
 
-    ~adjacencyList() override = default;
+    ~adjacencyList() override {
+        if (adjMatrix) {
+            for (int i = 0; i < get_num_nodes(); i++) {
+                delete[] adjMatrix[i];
+            }
+            delete[] adjMatrix;
+        }
+    };
 };
 
 #endif //GRAPHS_ADJACENCYLIST_H

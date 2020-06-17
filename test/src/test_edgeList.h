@@ -41,7 +41,6 @@ TEST(edges, add_remove_edge_undirected1) {
 
     for (int i = 0; i < num_nodes; i++) {
         for (int j = i + 1; j < num_nodes; j++) {
-            std::cout << "Garna lako " << i << "\t" << j << "\n";
             auto removed = edgeList.remove_edge({i, j});
             EXPECT_EQ(removed, true);
         }
@@ -204,6 +203,7 @@ TEST(adjMatrix, undirected_linear_graph) {
     }
 
     auto actual_adjMatrix = edgeList.get_adjacentMatrix();
+
     for (int r = 0; r < num_nodes; r++) {
         for (int c = 0; c < num_nodes; c++) {
             EXPECT_EQ(actual_adjMatrix[r][c], expected_adjMatrix[r][c]);

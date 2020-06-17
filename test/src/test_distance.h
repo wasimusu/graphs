@@ -15,16 +15,11 @@ TEST(dijkstra, linear_graph) {
         edgeList.add_edge({i, i + 1, 1});
     }
 
-//    auto res = dijkstra_shortest_distance(edgeList, 0);
-//    for(int r: res) std::cout << r << "\t"; cout << endl;
-
     for (int start = 0; start < num_nodes; start++) {
-        std::cout << start << endl;
         auto res = dijkstra_shortest_distance(edgeList, start);
-//        for (int end = 0; end < num_nodes; end++) {
-//            std::cout << res[end] << "\t" << abs(end - start) << endl;
-//            EXPECT_EQ(res[end], abs(end - start));
-//        }
+        for (int end = 0; end < num_nodes; end++) {
+            EXPECT_EQ(res[end], abs(end - start));
+        }
     }
 }
 
@@ -87,13 +82,16 @@ TEST(dijkstra, undirected_graph2) {
 
 TEST(bellman_ford, linear_graph) {
     edgeList edgeList(true);
-    int num_nodes = 5;
+    int num_nodes = 500;
+    std::vector<int> expected_distance;
     for (int i = 0; i < num_nodes - 1; i++) {
         edgeList.add_edge({i, i + 1, 1});
+        expected_distance.push_back(i);
     }
-    auto res = bellman_ford(edgeList, 0);
-    for (int d: res) cout << d << "\t";
-    cout << '\n';
+    expected_distance.push_back(num_nodes - 1);
+
+    auto actual_distance = bellman_ford(edgeList, 0);
+    EXPECT_EQ(actual_distance, expected_distance);
 }
 
 TEST(bellman_ford, random_graph) {
@@ -135,7 +133,8 @@ TEST(bellman_ford, all_pairs_graph) {
         }
     }
 
-    auto res = bellman_ford(edgeList, 0);
-    for (int d: res) cout << d << "\t";
-    cout << '\n';
+    auto actual_distance = bellman_ford(edgeList, 0);
+    std::vector<int> expected_distance(num_nodes, 1);
+    expected_distance[0] = 0;
+    EXPECT_EQ(actual_distance, expected_distance);
 }

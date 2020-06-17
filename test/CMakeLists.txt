@@ -27,3 +27,6 @@ target_link_libraries(adjMatrix_test gtest gtest_main)
 
 add_executable(adjList_test src/test_adjacencyList.h)
 target_link_libraries(adjList_test gtest gtest_main)
+
+add_executable(unionfind_test src/test_unionfind.h)
+target_link_libraries(unionfind_test gtest gtest_main)
