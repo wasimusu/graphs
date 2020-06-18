@@ -8,13 +8,12 @@ It uses Google Tests for unit testing and Google Benchmark for benchmarking the 
 
 ### Features
 * Ease of use.
-* Easily discoverable member functions
-* Lightweight and generic graph representation
+* Generic graph representation
 * Inputs are ids of nodes. Or let the nodes be decided automatically by the data structure
 
 ### Platform
 * CMake
-* C++11 to C++20
+* C++11
 * Clang
 * Linux (Xenial/Ubuntu 18.04)
 
@@ -29,7 +28,7 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * adjacencyList
 * adjacencyMatrix
 * edgeList
-* Print graphs for easy debugging. Multiple formats for printing graphs
+* TODO: Print graphs for easy debugging. Multiple formats for printing graphs
 
 ### Algorithms
 * Traversals (BFS, DFS, Level Order Traversal)
@@ -40,8 +39,11 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Floyd Warshall All Pairs Shortest Path Algorithm
 * Bellman Ford Shortest Path Algorithm (Works for negative edges)
 
-#### To be published by June 21, 2014
-* Connected Components
+#### TODO: To be published by June 21, 2014
+* More constructors for all data structures
+* Return list of edges as well as mst cost for minimum spanning tree (mst) queries 
+* Add test cases for all algorithms and data structures
+* Connected Components (detect cycles, lca, number of connected components, etc)
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Tarjan's Strongly Connected Components
 * Is the graph bipartite?
@@ -59,6 +61,6 @@ Just find the shortest distance between two people (the edges should have unit w
 * Reduce memory consumption and memory leaks
 
 ### Todo Devops
-* Test the library for multiple versions of C++
-* Test the library on multiple OS
-* Include bezel build
+* Test the library for multiple versions of C++ (14, 17, 20)
+* Test the library on multiple OS (MacOS, Windows)
+* Include Bazel build

@@ -24,5 +24,10 @@ constexpr int lowest_common_ancestor(graph &graph, const int node1, const int no
  * */
 constexpr size_t num_connected_components(graph &graph);
 
+/**
+ * @brief determines if the graph contains a cycle or not.
+ * */
+constexpr size_t contains_cycle(graph &graph);
+
 
 #endif //GRAPHS_CONNECTIVITY_H

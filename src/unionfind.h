@@ -23,15 +23,31 @@ public:
         }
     }
 
+    /*
+     * @brief: return the size of the set
+     * @returns[int] returns the size of the set
+     * **/
     int size() const {
         return _size;
     }
 
+    /*
+     * @brief determine the parent of a element
+     * @param[in] child: the item whose parent is to be determined
+     * **/
     int find_parent(int child) {
         if (parent[child] == child) return child;
         return find_parent(parent[child]);
     }
 
+    /*
+     * @brief merge/union two elements in a set.
+     * @param[in] first, second: the items which should be merged into one subset.
+     * Note that their parents or child are also merged into the same subset
+     *
+     * @returns[bool]: if the join was completed successfully or not.
+     * If two elements have same parent, merge/union can not be performed
+     * **/
     bool join(const int first, const int second) {
         int first_parent = find_parent(first);
         int second_parent = find_parent(second);
@@ -44,6 +60,11 @@ public:
         return true;
     }
 
+    /**
+     * @brief Determine if two elements have the same parent of not.
+     * @param[in]first, second: two elements for which we determine if they have same parent or not
+     * @returns[bool]: whether two input element have same parent or not
+     * */
     bool has_same_parent(const int first, const int second) {
         return find_parent(first) == find_parent(second);
     }

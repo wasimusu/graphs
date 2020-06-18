@@ -8,6 +8,10 @@
 #include <iostream>
 #include "graph.h"
 
+/**
+ * @brief Implementation of graph data structures edgeList.
+ * @see base class graph for documentation
+ * */
 class edgeList : public graph {
 private:
     std::unordered_set<int> nodes;
@@ -26,6 +30,7 @@ public:
 
     /*
      * @brief: add edge in the graph. Does nothing if the edge already exists
+     * An edge is described by start_node (start), end_node (end) and optionally by weight.
      * **/
     bool add_edge(const int start, const int end, const int weight = 0) final {
         return add_edge({start, end, weight});
@@ -35,7 +40,7 @@ public:
      * @brief: add edge in the graph. Does nothing if the edge already exists
      * It is the core function used by every other method that adds edges into the graph.
      *
-     * @returns true if the edges were successfully added to the graph, false otherwise.
+     * @returns[bool] true if the edges were successfully added to the graph, false otherwise.
      * If the edge was already present in the graph, it returns false
      */
     bool add_edge(std::vector<int> edge) override {
@@ -115,8 +120,6 @@ public:
 
     /**
      * @brief computes and returns adjacency matrix of the graph
-     * Assumes the indices are 0 based.
-     * The behavior is undefined otherwise
      * */
     int **get_adjacentMatrix() override {
         num_nodes = get_num_nodes();
