@@ -1,3 +1,9 @@
+/**
+ * @file
+ * Implements algorithms pertaining to connectivity in a graph
+ * */
+
+
 #pragma once
 #ifndef GRAPHS_CONNECTIVITY_H
 #define GRAPHS_CONNECTIVITY_H

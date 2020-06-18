@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Implements data structure for representation of graphs as adjacency matrix.
+ * */
+
 #pragma once
 #ifndef GRAPHS_ADJACENCYMATRIX_H
 #define GRAPHS_ADJACENCYMATRIX_H

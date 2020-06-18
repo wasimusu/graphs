@@ -2,7 +2,7 @@
 
 void bfs(graph &graph, int source_node, std::vector<int> &result) {
 
-    auto edges = graph.get_adjList();
+    auto edges = graph.get_adjacentList();
     std::queue<int> queue;
     queue.push(source_node);
 
@@ -25,7 +25,7 @@ void bfs(graph &graph, int source_node, std::vector<int> &result) {
 }
 
 void dfs(graph &graph, int source_node, std::vector<int> &result) {
-    auto edges = graph.get_adjList();
+    auto edges = graph.get_adjacentList();
     std::vector<int> stack;
     stack.push_back(source_node);
 
@@ -48,7 +48,7 @@ void dfs(graph &graph, int source_node, std::vector<int> &result) {
 }
 
 void level_order_traversal(graph &graph, int source_node, std::vector<std::vector<int>> &result) {
-    auto edges = graph.get_adjList();
+    auto edges = graph.get_adjacentList();
     std::vector<int> parent = {source_node};
     std::vector<int> children;
     result.push_back({source_node});

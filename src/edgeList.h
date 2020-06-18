@@ -147,7 +147,7 @@ public:
     /**
      * @brief computes and returns the adjacent list representing the graph
      */
-    std::unordered_map<int, std::vector<int>> get_adjList() final {
+    std::unordered_map<int, std::vector<int>> get_adjacentList() final {
         for (const auto &edge: edges) {
             adjList[edge[0]].push_back(edge[1]);
         }

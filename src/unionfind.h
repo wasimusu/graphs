@@ -1,5 +1,6 @@
 /**
- * Implementation of union find structure.
+ * @file
+ * @brief Implementation of union find structure.
  * Used in the implementation of kruskal's minimum spanning tree
  * */
 

@@ -18,6 +18,7 @@ It uses Google Tests for unit testing and Google Benchmark for benchmarking the 
 * Linux (Xenial/Ubuntu 18.04)
 
 ### Build
+As prequisites, CMAKE and git needs to be already installed.
 ```
 cd graphs
 sh install.sh

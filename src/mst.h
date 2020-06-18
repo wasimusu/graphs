@@ -1,4 +1,5 @@
 /**
+ * @file
  * @brief Implements algorithms to compute minimum spanning tree for graphs
  * */
 

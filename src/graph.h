@@ -8,6 +8,7 @@
 #include <ostream>
 
 /**
+ * @file
  * @brief Base class of all other graph data structures: edgeList, adjacencyMatrix, adjacencyList.
  * This is a pure abstract class and is not instantiatable. However, it can be used to point derived classes.
  *
@@ -86,7 +87,7 @@ public:
      *
      * @returns [std::unordered_map<int, std::vector<int>>] adjacencyMatrix of a graph which is a pointer to 2D int array
      * */
-    virtual std::unordered_map<int, std::vector<int>> get_adjList() {
+    virtual std::unordered_map<int, std::vector<int>> get_adjacentList() {
         return adjList;
     }
 

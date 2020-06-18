@@ -1,5 +1,7 @@
 #include <benchmark/benchmark.h>
 #include "../../src/graphs.h"
+#include <vector>
+
 
 static void build_graph(benchmark::State &state, int num_nodes, graph &graph) {
     while (state.KeepRunning()) {
@@ -11,15 +13,11 @@ static void build_graph(benchmark::State &state, int num_nodes, graph &graph) {
     }
 }
 
-static void prim(benchmark::State &state, graph &graph) {
-    while (state.KeepRunning()) {
-        auto mst = mst_prim(graph);
-    }
-}
 
-static void kruskal(benchmark::State &state, graph &graph) {
+static void topsort(benchmark::State &state, graph &graph) {
     while (state.KeepRunning()) {
-        auto mst = mst_kruskal(graph);
+        std::vector<int> result;
+        topological_sort(&graph, result);
     }
 }
 
@@ -29,15 +27,12 @@ adjacencyMatrix adjacencyMatrix(true);
 adjacencyList adjacencyList(true);
 
 BENCHMARK_CAPTURE(build_graph, edgeList, num_nodes, edgeList);
-BENCHMARK_CAPTURE(prim, edgeList, edgeList);
-BENCHMARK_CAPTURE(kruskal, edgeList, edgeList);
+BENCHMARK_CAPTURE(topsort, edgeList, edgeList);
 
 //BENCHMARK_CAPTURE(build_graph, adjacencyList, num_nodes, adjacencyList);
-//BENCHMARK_CAPTURE(prim, adjacencyList, adjacencyList);
-//BENCHMARK_CAPTURE(kruskal, adjacencyList, adjacencyList);
+//BENCHMARK_CAPTURE(topsort, adjacencyList, adjacencyList);
 
 //BENCHMARK_CAPTURE(build_graph, adjacencyMatrix, num_nodes, adjacencyMatrix);
-//BENCHMARK_CAPTURE(prim, adjacencyMatrix, adjacencyMatrix);
-//BENCHMARK_CAPTURE(kruskal, adjacencyMatrix, adjacencyMatrix);
+//BENCHMARK_CAPTURE(topsort, adjacencyMatrix, adjacencyMatrix);
 
 BENCHMARK_MAIN();

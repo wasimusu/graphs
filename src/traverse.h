@@ -1,5 +1,6 @@
 /**
- * traverse.h implements traversal methods for graphs.
+ * @file
+ * @brief traverse.h implements traversal methods for graphs.
  * It does not implement inorder, preorder and postorder traversal because
  * they make sense only for binary trees and binary search trees
  * */
