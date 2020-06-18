@@ -48,16 +48,20 @@ void dfs(graph &graph, int source_node, std::vector<int> &result) {
 }
 
 void level_order_traversal(graph &graph, int source_node, std::vector<std::vector<int>> &result) {
-    auto edges = graph.get_edges();
+    auto edges = graph.get_adjList();
     std::vector<int> parent = {source_node};
     std::vector<int> children;
+    result.push_back({source_node});
 
     int n = graph.get_num_nodes();
     std::vector<bool> visited(n, false);
 
     while (!parent.empty()) {
+        if (parent.empty()) break;
 
         for (int node: parent) {
+
+//            std::cout << node << "\t";
 
             if (visited[node]) continue;
             visited[node] = true;
@@ -66,7 +70,10 @@ void level_order_traversal(graph &graph, int source_node, std::vector<std::vecto
                 if (visited[child]) continue;
                 children.push_back(child);
             }
+
         }
+//        std::cout << std::endl << std::flush;
+//        for(int c: children) std::cout << c << "\t"; std::cout << std::endl << std::flush;
 
         if (children.empty())
             return;

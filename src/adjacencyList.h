@@ -85,8 +85,8 @@ public:
             std::fill(adjMatrix[i], adjMatrix[i] + num_nodes, 0);
         }
 
-        for (const auto&[parent, children]: adjList) {
-            for (const auto &child: children) {
+        for (int parent = 0; parent < num_nodes; parent++) {
+            for (const int &child: adjList[parent]) {
                 adjMatrix[parent][child] = 1;
             }
         }
@@ -97,8 +97,8 @@ public:
 
     std::vector<std::vector<int>> get_edges() override {
         std::vector<std::vector<int>> edges;
-        for (const auto&[parent, children]: adjList) {
-            for (const auto &child: children) {
+        for (int parent = 0; parent < num_nodes; parent++) {
+            for (const int &child: adjList[parent]) {
                 edges.push_back({parent, child});
             }
         }
@@ -111,8 +111,8 @@ public:
         num_nodes = get_num_nodes();
         indegree = new int[num_nodes];
         std::fill(indegree, indegree + num_nodes, 0);
-        for (const auto&[parent, children]: adjList) {
-            for (const auto &child: children) {
+        for (int parent = 0; parent < num_nodes; parent++) {
+            for (const int &child: adjList[parent]) {
                 ++indegree[child];
             }
         }
