@@ -35,7 +35,7 @@ void random_graph() {
     cout << '\n';
 
     vector<int> expected = {0, 1, 3, 5, 0, 4, 3};
-    assert(equal(res.begin(), res.end(), expected.begin(), expected.end()));
+    assert(equal(res.begin(), res.end(), expected.begin()));
 }
 
 void random_graph2() {
@@ -50,7 +50,7 @@ void random_graph2() {
     cout << '\n';
 
     vector<int> expected = {0, -2, 8, 5};
-    assert(equal(actual.begin(), actual.end(), expected.begin(), expected.end()));
+    assert(equal(actual.begin(), actual.end(), expected.begin()));
 }
 
 void all_pairs_graph() {
