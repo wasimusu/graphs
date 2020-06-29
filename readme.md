@@ -1,5 +1,5 @@
 ## Graphs
-An open-source modern graph library built in C++ for exploring graphs with focus on ease of use.
+An open-source modern graph (&trees) library built in C++ for exploring graphs with focus on ease of use.
 
 It uses Google Tests for unit testing and Google Benchmark for benchmarking the library. Measure before optimization.
 
