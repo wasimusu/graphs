@@ -40,10 +40,9 @@ The value of a graph library lies in making it easy to construct and analyze gra
 * Floyd Warshall All Pairs Shortest Path Algorithm
 * Bellman Ford Shortest Path Algorithm (Works for negative edges)
 
-#### TODO: To be published by June 21, 2014
+#### TODO: Upcoming features and algorithms
 * More constructors for all data structures
 * Return list of edges as well as mst cost for minimum spanning tree (mst) queries 
-* Add test cases for all algorithms and data structures
 * Connected Components (detect cycles, lca, number of connected components, etc)
 * Lowest Common Ancestor (Single Query and Multiple Query (Binary Uplifting))
 * Tarjan's Strongly Connected Components
@@ -56,6 +55,31 @@ The value of a graph library lies in making it easy to construct and analyze gra
 Just find the shortest distance between two people (the edges should have unit weight).
 * How many connected components are there in the graph?
 * Is there circular dependency in the graph? Or are there loops in the graph?
+
+### Sample usage
+This section shows usage of dijkstra's algorithm on a directed graph. For more usage, see the [sample](sample) directory.
+
+```
+#include "src/graphs.h"
+
+
+int main() {
+    edgeList edgeList(true); // directed edge list
+
+    edgeList.add_edge(0, 1, 4);
+    edgeList.add_edge(0, 2, 2);
+    edgeList.add_edge(1, 2, 5);
+    edgeList.add_edge(1, 3, 10);
+    edgeList.add_edge(2, 4, 3);
+    edgeList.add_edge(4, 3, 4);
+    edgeList.add_edge(3, 5, 11);
+
+    auto shortest_distance = dijkstra_shortest_distance(edgeList, 0);
+    // Expect shortest distance: {0, 4, 2, 9, 5, 20};
+
+    return 0;
+}
+```
 
 ### Goals
 * Double the speed of the whole library.
