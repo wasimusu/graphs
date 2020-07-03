@@ -19,10 +19,13 @@ sys.path.insert(0, os.path.abspath('../..'))
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
 curr_dir = os.path.abspath('.')
-if not read_the_docs_build:
+import sphinx as s
+print("Curr version of sphinx: ", s.__version)
+if read_the_docs_build:
     os.chdir('..')
     subprocess.call('doxygen', shell=True)
     os.chdir(curr_dir)
+    print("Build was built ", os.listdir("../build"))
 
 # -- Project information -----------------------------------------------------
 
