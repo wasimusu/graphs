@@ -26,6 +26,7 @@ public:
 
     /*
      * @brief return the size of the set
+     *
      * @returns[int] returns the size of the set
      * **/
     int size() const {
@@ -34,6 +35,7 @@ public:
 
     /*
      * @brief determine the parent of a element
+     *
      * @param[in] child: the item whose parent is to be determined
      * **/
     int find_parent(int child) {
@@ -43,7 +45,8 @@ public:
 
     /*
      * @brief merge/union two elements in a set.
-     * @param[in] first, second: the items which should be merged into one subset.
+     *
+     * @param first, second: the items which should be merged into one subset.
      * Note that their parents or child are also merged into the same subset
      *
      * @returns[bool]: if the join was completed successfully or not.
@@ -63,6 +66,7 @@ public:
 
     /**
      * @brief Determine if two elements have the same parent of not.
+     *
      * @param[in]first, second: two elements for which we determine if they have same parent or not
      * @returns[bool]: whether two input element have same parent or not
      * */
