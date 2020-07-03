@@ -17,12 +17,12 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # Generate the XML files for Sphinx
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
-print("Contents of current dir: ", os.listdir("."))
-if read_the_docs_build:
-    print("Path ", os.path.abspath("."))
-    subprocess.call('..', shell=True)
+
+curr_dir = os.path.abspath('.')
+if not read_the_docs_build:
+    os.chdir('..')
     subprocess.call('doxygen', shell=True)
-    subprocess.call('cd source', shell=True)
+    os.chdir(curr_dir)
 
 # -- Project information -----------------------------------------------------
 
