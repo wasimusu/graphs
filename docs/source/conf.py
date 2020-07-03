@@ -20,7 +20,9 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 print("Contents of current dir: ", os.listdir("."))
 if read_the_docs_build:
     print("Path ", os.path.abspath("."))
+    subprocess.call('..', shell=True)
     subprocess.call('doxygen', shell=True)
+    subprocess.call('cd source', shell=True)
 
 # -- Project information -----------------------------------------------------
 
