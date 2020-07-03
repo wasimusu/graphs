@@ -1,10 +1,6 @@
 /**
  * @file
- * @brief Implements data structure for representation of graphs as adjacency list.
- * For each vertex, we have it's list of neighbors.
- * Currently the edges represented by adjacencyList is only unweighted edges.
  * */
-
 #pragma once
 #ifndef GRAPHS_ADJACENCYLIST_H
 #define GRAPHS_ADJACENCYLIST_H
@@ -12,6 +8,11 @@
 #include "graph.h"
 #include <algorithm>
 
+/**
+ * @brief Implements data structure for representation of graphs as adjacency list.
+ * For each vertex, we have it's list of neighbors.
+ * Currently the edges represented by adjacencyList is only unweighted edges.
+ * */
 class adjacencyList : public graph {
 private:
     std::unordered_set<int> nodes;

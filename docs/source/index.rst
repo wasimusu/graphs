@@ -56,9 +56,9 @@ For more usage, see the sample directory directory on github.
 
 API References
 ==============
-:doc:`Graph Algorithm APIs <algorithm>`
-
 :doc:`Graph Data structures APIs <datastructure>`
+
+:doc:`Graph Algorithm APIs <algorithm>`
 
 Indices and tables
 ==================

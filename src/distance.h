@@ -8,7 +8,7 @@
 #define GRAPHS_DISTANCE_H
 
 
-/*
+/**
  * @brief Implements dijsktra's shortest path algorithm to find the shortest distance between source_node and all
  * other nodes in the graph.
  *
@@ -19,7 +19,7 @@
 std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node);
 
 
-/*
+/**
  * @brief Computes all pair shortest path using floyd's all path shortest path algorithm.
  * As long as there is no cycle, this algorithm works fine.
  * reference: https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
@@ -38,7 +38,7 @@ int **all_pair_shortest_path(graph &graph);
  * @param[int]source_node: The source node from which shortest distance is to be computed
  * @returns[std::vector<int>] distances: shortest distance from source_node to all other nodes
  *
- * @throws: std::invalid_argument error if the graph is not weighted.
+ * @throws std::invalid_argument error if the graph is not weighted.
  **/
 std::vector<int> bellman_ford(graph &graph, const int source_node);
 

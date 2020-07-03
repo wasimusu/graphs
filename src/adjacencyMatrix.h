@@ -1,6 +1,5 @@
 /**
  * @file
- * @brief Implements data structure for representation of graphs as adjacency matrix.
  * */
 
 #pragma once
@@ -8,7 +7,9 @@
 #define GRAPHS_ADJACENCYMATRIX_H
 
 #include "graph.h"
-
+/**
+ * @brief Implements data structure for representation of graphs as adjacency matrix.
+ * */
 class adjacencyMatrix : public graph {
 private:
     int **adjMatrix = nullptr;

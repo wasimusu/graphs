@@ -10,7 +10,11 @@
 #include <algorithm>
 
 /**
- * If the nodes are not enumerated in 0 base, then there is segfault and allocated memory won't be released
+ * @brief Implements topological sort
+ * @attention If the nodes are not enumerated in 0 base, then there is segfault and allocated memory won't be released
+ *
+ * @param graph input graph of any type: edgeList, adjacencyList, adjacencyMatrix
+ * @param result [std::vector<int>] all the nodes of the graph in topological sorted order
  * */
 void topological_sort(graph *graph, std::vector<int> &result) {
 

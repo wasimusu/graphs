@@ -13,6 +13,9 @@
  * @brief implements kruskal's minimum spanning tree
  * Keep adding minimum edges and don't form cycle.
  * Requires weighted edge list
+ *
+ * @param graph input graph of any type: edgeList, adjacencyList, adjacencyMatrix
+ * @returns[int] cost of minimum spanning tree computed from the input graph
  * */
 int mst_kruskal(graph& graph) {
     int n = graph.get_num_nodes();
@@ -48,7 +51,10 @@ int mst_kruskal(graph& graph) {
 
 /**
  * @brief implements prim's minimum spanning tree
- * Requires weighted edge list
+ * Requires the graph to be weighted graph
+ *
+ * @param graph input graph of any type: edgeList, adjacencyList, adjacencyMatrix
+ * @returns[int] cost of minimum spanning tree computed from the input graph
  * */
 int mst_prim(graph& graph) {
 

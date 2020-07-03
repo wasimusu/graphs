@@ -3,6 +3,8 @@ An open-source modern graph (&trees) library built in C++ for exploring graphs w
 
 It uses Google Tests for unit testing and Google Benchmark for benchmarking the library. Measure before optimization.
 
+A clean succinct documentation is available on [readthedocs](https://graphs.readthedocs.io/en/latest/) soon.
+
 #### Build Status
 <img src="https://travis-ci.com/wasimusu/graphs.svg?branch=master" width="100">
 <img src="https://readthedocs.org/projects/graphs/badge/?version=latest">
@@ -24,18 +26,6 @@ As prequisites, CMAKE and git needs to be already installed.
 cd graphs
 sh install.sh
 ```
-
-### Documentation
-A clean succinct documentation will be available on [readthedocs](https://graphs.readthedocs.io/en/latest/) soon.
-Until then you can build the document using doxygen and sphinx.
-```
-cd docs
-pip install -r requirements.txt
-doxygen
-make html
-```
-Note: if you're building documentation on Windows, you need to add the path of ../Doxygen/bin in environment variables;
- of course install it if you have not already.
 
 ### Data Structures for graph representation
 The value of a graph library lies in making it easy to construct and analyze graphs. 

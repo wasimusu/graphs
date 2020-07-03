@@ -18,7 +18,7 @@
  *
  * @param[in] graph: input graph on which breadth first search traversal has to be performed.
  * @param[in] source_node: the node from which to start the traversal
- * @param[out]result: the nodes of the graph in bfs order
+ * @param[out] result: the nodes of the graph in bfs order
  *
  * */
 void bfs(graph &graph, int source_node, std::vector<int> &result);
@@ -30,7 +30,7 @@ void bfs(graph &graph, int source_node, std::vector<int> &result);
  *
  * @param[in] graph: input graph on which depth first search traversal has to be performed.
  * @param[in] source_node: the node from which to start the traversal
- * @param[out]result: the nodes of the graph in dfs order
+ * @param[out] result: the nodes of the graph in dfs order
  * */
 void dfs(graph &graph, int source_node, std::vector<int> &result);
 
@@ -40,7 +40,7 @@ void dfs(graph &graph, int source_node, std::vector<int> &result);
  *
  * @param[in] graph: input graph on which level order traversal has to be performed.
  * @param[in] source_node: the node from which to start the traversal
- * @param[out]result: the nodes of the graph in level order
+ * @param[out] result: the nodes of the graph in level order
  * */
 void level_order_traversal(graph &graph, int source_node, std::vector<std::vector<int>> &result);
 

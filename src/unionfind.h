@@ -15,6 +15,10 @@ private:
     std::vector<int> parent;
     const int _size;
 public:
+    /**
+     * @brief construct union find object
+     * @param[in] size: total number of nodes/elements/objects
+     * **/
     union_find(const int size) : _size(size) {
         sets.reserve(size);
         parent.reserve(size);
@@ -24,7 +28,7 @@ public:
         }
     }
 
-    /*
+    /**
      * @brief return the size of the set
      *
      * @returns[int] returns the size of the set
@@ -33,17 +37,18 @@ public:
         return _size;
     }
 
-    /*
+    /**
      * @brief determine the parent of a element
      *
      * @param[in] child: the item whose parent is to be determined
+     * @returns[int] the parent of the child
      * **/
     int find_parent(int child) {
         if (parent[child] == child) return child;
         return find_parent(parent[child]);
     }
 
-    /*
+    /**
      * @brief merge/union two elements in a set.
      *
      * @param first, second: the items which should be merged into one subset.
@@ -51,7 +56,7 @@ public:
      *
      * @returns[bool]: if the join was completed successfully or not.
      * If two elements have same parent, merge/union can not be performed
-     * **/
+     * */
     bool join(const int first, const int second) {
         int first_parent = find_parent(first);
         int second_parent = find_parent(second);
@@ -67,7 +72,7 @@ public:
     /**
      * @brief Determine if two elements have the same parent of not.
      *
-     * @param[in]first, second: two elements for which we determine if they have same parent or not
+     * @param[in] first, second: two elements for which we determine if they have same parent or not
      * @returns[bool]: whether two input element have same parent or not
      * */
     bool has_same_parent(const int first, const int second) {

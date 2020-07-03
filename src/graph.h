@@ -1,3 +1,6 @@
+/**
+ * @file
+ * */
 #pragma once
 #ifndef GRAPHS_GRAPH_H
 #define GRAPHS_GRAPH_H
@@ -8,7 +11,6 @@
 #include <ostream>
 
 /**
- * @file
  * @brief Base class of all other graph data structures: edgeList, adjacencyMatrix, adjacencyList.
  * This is a pure abstract class and is not instantiatable. However, it can be used to point derived classes.
  *
