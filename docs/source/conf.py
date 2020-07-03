@@ -54,7 +54,7 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 breathe_projects = {
-    "graphs": "C:/Users/A02290691/CLionProjects/graphs/docs/build/xml"
+    "graphs": "../build/xml"
 }
 
 # -- Options for HTML output -------------------------------------------------
