@@ -15,4 +15,4 @@ make
 
 pwd
 ./test/tests 
-./graphs
+./src/graphs
