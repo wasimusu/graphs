@@ -20,7 +20,7 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
 curr_dir = os.path.abspath('.')
 import sphinx as s
-print("Curr version of sphinx: ", s.__version)
+print("Curr version of sphinx: ", s.__version__)
 if read_the_docs_build:
     os.chdir('..')
     subprocess.call('doxygen', shell=True)
