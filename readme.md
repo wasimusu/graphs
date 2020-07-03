@@ -5,6 +5,7 @@ It uses Google Tests for unit testing and Google Benchmark for benchmarking the 
 
 #### Build Status
 <img src="https://travis-ci.com/wasimusu/graphs.svg?branch=master" width="100">
+<img src="https://readthedocs.org/projects/graphs/badge/?version=latest">
 
 ### Features
 * Ease of use.
@@ -23,13 +24,29 @@ As prequisites, CMAKE and git needs to be already installed.
 cd graphs
 sh install.sh
 ```
+### Documentation
+A clean succinct documentation will be available on [readthedocs](https://graphs.readthedocs.io/en/latest/) soon.
+Until then you can build the document using doxygen.
+
+- Linux
+```
+cd docs
+doxygen
+```
+
+- Windows
+```
+cd docs
+doxygen.exe
+```
+
 
 ### Data Structures for graph representation
 The value of a graph library lies in making it easy to construct and analyze graphs. 
 * adjacencyList
 * adjacencyMatrix
 * edgeList
-* TODO: Print graphs for easy debugging. Multiple formats for printing graphs
+* (Coming Up) Multiple formats for printing graphs to make it easy to debug them.
 
 ### Algorithms
 * Traversals (BFS, DFS, Level Order Traversal)
