@@ -9,6 +9,7 @@
 #include "graph.h"
 
 /**
+ * @file
  * @brief Implementation of graph data structures edgeList.
  * @see base class graph for documentation
  * */
@@ -29,7 +30,7 @@ public:
     }
 
     /*
-     * @brief: add edge in the graph. Does nothing if the edge already exists
+     * @brief add edge in the graph. Does nothing if the edge already exists
      * An edge is described by start_node (start), end_node (end) and optionally by weight.
      * **/
     bool add_edge(const int start, const int end, const int weight = 0) final {
@@ -37,7 +38,7 @@ public:
     }
 
     /**
-     * @brief: add edge in the graph. Does nothing if the edge already exists
+     * @brief add edge in the graph. Does nothing if the edge already exists
      * It is the core function used by every other method that adds edges into the graph.
      *
      * @returns[bool] true if the edges were successfully added to the graph, false otherwise.

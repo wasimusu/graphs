@@ -25,7 +25,7 @@ public:
     }
 
     /*
-     * @brief: return the size of the set
+     * @brief return the size of the set
      * @returns[int] returns the size of the set
      * **/
     int size() const {

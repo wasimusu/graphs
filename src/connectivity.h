@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements algorithms pertaining to connectivity in a graph
+ * @brief Implements algorithms pertaining to connectivity in a graph
  * */
 
 

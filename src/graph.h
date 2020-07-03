@@ -30,7 +30,7 @@ public:
     virtual ~graph() = default;
 
     /*
-     * @brief: adds edge in the graph. Does nothing if the edge already exists.
+     * @brief adds edge in the graph. Does nothing if the edge already exists.
      * An edge is described by start_node (start), end_node (end) and optionally by weight.
      *
      * @returns[bool] whether the edge was successfully inserted or not.
@@ -42,7 +42,7 @@ public:
     virtual bool add_edge(int start, int end, int weight = 0) = 0;
 
     /**
-     * @brief: add edge in the graph. Does nothing if the edge already exists.
+     * @brief add edge in the graph. Does nothing if the edge already exists.
      *
      * @returns[bool] true if the edges were successfully added to the graph, false otherwise.
      * If the edge was already present in the graph, it returns false
@@ -54,7 +54,7 @@ public:
     }
 
     /*
-     * @brief: removes edge from the graph. Does nothing if the edge does not exist.
+     * @brief removes edge from the graph. Does nothing if the edge does not exist.
      * An edge for removal is completely described by start_node (start) and end_node (end)
      *
      * @returns[bool] whether the edge was successfully removed or not.

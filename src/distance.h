@@ -20,7 +20,7 @@ std::vector<int> dijkstra_shortest_distance(graph &graph, int source_node);
 
 
 /*
- * @brief: Computes all pair shortest path using floyd's all path shortest path algorithm.
+ * @brief Computes all pair shortest path using floyd's all path shortest path algorithm.
  * As long as there is no cycle, this algorithm works fine.
  * reference: https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
  *

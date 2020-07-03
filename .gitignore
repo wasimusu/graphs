@@ -8,3 +8,5 @@
 !.travis.yml
 !test
 !install.sh
+docs/build
+!Doxyfile

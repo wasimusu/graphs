@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements data structure for representation of graphs as adjacency matrix.
+ * @brief Implements data structure for representation of graphs as adjacency matrix.
  * */
 
 #pragma once

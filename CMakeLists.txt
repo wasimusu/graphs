@@ -6,11 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(CMAKE_BUILD_TYPE RELEASE)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -fsanitize=address -pg -g")
 
-# Setup tests
+add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(benchmark)
-
-add_executable(graphs src/main.cpp)
 
 # Sample codes
 add_executable(top_demo sample/topological_sort_demo.cpp)
