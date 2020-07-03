@@ -24,22 +24,18 @@ As prequisites, CMAKE and git needs to be already installed.
 cd graphs
 sh install.sh
 ```
+
 ### Documentation
 A clean succinct documentation will be available on [readthedocs](https://graphs.readthedocs.io/en/latest/) soon.
-Until then you can build the document using doxygen.
-
-- Linux
+Until then you can build the document using doxygen and sphinx.
 ```
 cd docs
+pip install -r requirements.txt
 doxygen
+make html
 ```
-
-- Windows
-```
-cd docs
-doxygen.exe
-```
-
+Note: if you're building documentation on Windows, you need to add the path of ../Doxygen/bin in environment variables;
+ of course install it if you have not already.
 
 ### Data Structures for graph representation
 The value of a graph library lies in making it easy to construct and analyze graphs. 
