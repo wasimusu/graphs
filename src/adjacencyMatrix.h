@@ -18,8 +18,8 @@ private:
 public:
     /**
      * @brief default constructor for adjacency matrix
-     * @param[int] num_nodes: the maximum number of nodes that will be in the graph
-     * @param[bool] directed: is the graph directed or not?
+     * @param [int] num_nodes the maximum number of nodes that will be in the graph
+     * @param [bool] directed is the graph directed or not?
      * @returns void
      * */
     explicit adjacencyMatrix(const int num_nodes, const bool directed = true) : num_nodes(num_nodes),
@@ -33,8 +33,8 @@ public:
 
     /**
      * @brief is the edge with given start and end node valid? Does it already exist?
-     * @param[int] start, end: the start and end node of the edge
-     * @returns[bool] true if the edge can be added to the graph because it is valid and does not already exist
+     * @param [int] start, end: the start and end node of the edge
+     * @returns [bool] true if the edge can be added to the graph because it is valid and does not already exist
      * */
     inline bool is_new_edge(const int start, const int end) {
         return (start < 0 || end < 0 || start >= num_nodes || end >= num_nodes || adjMatrix[start][end] == 0);
@@ -43,8 +43,8 @@ public:
 
     /**
      * @brief given start, end and optionally weight describing an edge, insert it into the graph
-     * @paramp[int, int, int = 0] start, end, weight: parameters describing an edge(start_node, end_node, weight)
-     * @returns[bool] was the edge successfully inserted into the graph
+     * @param [int, int, int = 0] start, end, weight: parameters describing an edge(start_node, end_node, weight)
+     * @returns [bool] was the edge successfully inserted into the graph
      * */
     bool add_edge(const int start, const int end, const int weight = 0) override {
         return weight == 0 ? add_edge({start, end}) : add_edge({start, end, weight});
@@ -52,8 +52,8 @@ public:
 
     /**
      * @brief given a reference to std::vector<int> describing an edge, insert it into the graph
-     * @paramp[std::vector<int>&] edge: an edge description (start_node, end_node, (optionally) weight)
-     * @returns[bool] was the edge successfully inserted into the graph
+     * @param [std::vector<int>&] edge: an edge description (start_node, end_node, (optionally) weight)
+     * @returns [bool] was the edge successfully inserted into the graph
      * */
     bool add_edge(std::vector<int> &&edge) {
         if (edge.size() < 2 || edges.size() > 3)
@@ -98,7 +98,7 @@ public:
 
     /**
      * @brief returns the adjacency_matrix
-     * @returns[**int] adjacency_matrix
+     * @returns [**int] adjacency_matrix
      * */
     int **get_adjacentMatrix() const {
         return adjMatrix;
@@ -106,7 +106,7 @@ public:
 
     /**
      * @brief returns the number of nodes in the graph
-     * @returns[int] the number of nodes in the graph
+     * @returns [int] the number of nodes in the graph
      * */
     int get_num_nodes() const final {
         return num_nodes;
@@ -114,7 +114,7 @@ public:
 
     /**
      * @brief compute indegree for all the nodes in the graph
-     * @returns[int*] indegree for all the nodes
+     * @returns [int*] indegree for all the nodes
      * */
     int *get_indegree() final {
         num_nodes = get_num_nodes();

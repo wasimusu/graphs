@@ -17,7 +17,7 @@ private:
 public:
     /**
      * @brief construct union find object
-     * @param[in] size: total number of nodes/elements/objects
+     * @param [in] size: total number of nodes/elements/objects
      * **/
     union_find(const int size) : _size(size) {
         sets.reserve(size);
@@ -40,7 +40,7 @@ public:
     /**
      * @brief determine the parent of a element
      *
-     * @param[in] child: the item whose parent is to be determined
+     * @param [in] child: the item whose parent is to be determined
      * @returns[int] the parent of the child
      * **/
     int find_parent(int child) {
@@ -72,7 +72,7 @@ public:
     /**
      * @brief Determine if two elements have the same parent of not.
      *
-     * @param[in] first, second: two elements for which we determine if they have same parent or not
+     * @param [in] first, second: two elements for which we determine if they have same parent or not
      * @returns[bool]: whether two input element have same parent or not
      * */
     bool has_same_parent(const int first, const int second) {

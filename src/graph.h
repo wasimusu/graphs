@@ -35,7 +35,7 @@ public:
      * @brief adds edge in the graph. Does nothing if the edge already exists.
      * An edge is described by start_node (start), end_node (end) and optionally by weight.
      *
-     * @returns[bool] whether the edge was successfully inserted or not.
+     * @returns [bool] whether the edge was successfully inserted or not.
      * An edge can not be inserted for two reasons:
      * - It already exists
      * - It is invalid. For instance, in ajdacencyMatrix your node id should be less (0 base)
@@ -46,7 +46,7 @@ public:
     /**
      * @brief add edge in the graph. Does nothing if the edge already exists.
      *
-     * @returns[bool] true if the edges were successfully added to the graph, false otherwise.
+     * @returns [bool] true if the edges were successfully added to the graph, false otherwise.
      * If the edge was already present in the graph, it returns false
      *
      * @throws invalid_argument exception if the size of the edge is not 2 or 3.
@@ -59,7 +59,7 @@ public:
      * @brief removes edge from the graph. Does nothing if the edge does not exist.
      * An edge for removal is completely described by start_node (start) and end_node (end)
      *
-     * @returns[bool] whether the edge was successfully removed or not.
+     * @returns [bool] whether the edge was successfully removed or not.
      * An edge can not be removed if it does not already exist
      **/
     virtual bool remove_edge(const int start, const int end) {

@@ -3,7 +3,7 @@ An open-source modern graph (&trees) library built in C++ for exploring graphs w
 
 It uses Google Tests for unit testing and Google Benchmark for benchmarking the library. Measure before optimization.
 
-A clean succinct documentation is available on [readthedocs](https://graphs.readthedocs.io/en/latest/) soon.
+A clean succinct documentation is available on [readthedocs](https://graphs.readthedocs.io/en/latest/).
 
 #### Build Status
 <img src="https://travis-ci.com/wasimusu/graphs.svg?branch=master" width="100">
