@@ -2,9 +2,10 @@ version: 1
 jobs:
   build_gcc:
     steps:
-      - pwd
+      - run: pwd
       - checkout
-      - sh install.sh
+      - run: pwd
+      - run: sh install.sh
 
 workflows:
   version: 1
