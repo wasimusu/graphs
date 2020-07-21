@@ -6,3 +6,9 @@ jobs:
     steps:
       - checkout
       - sh install.sh
+
+workflows:
+  version: 1
+  build_and_test:
+    jobs:
+      - build_gcc_6
