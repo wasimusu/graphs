@@ -1,9 +1,8 @@
 version: 1
 jobs:
-  build_gcc_6:
-    docker:
-      - image: gcc:6
+  build_gcc:
     steps:
+      - pwd
       - checkout
       - sh install.sh
 
@@ -11,4 +10,4 @@ workflows:
   version: 1
   build_and_test:
     jobs:
-      - build_gcc_6
+      - build_gcc
